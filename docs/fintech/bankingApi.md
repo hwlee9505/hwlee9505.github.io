@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 금융결제원 테스트베드 api활용해서 회원가입하기
+title: 금융결제원 테스트베드 API
 parent: Fintech
 nav_order: 1
 ---
