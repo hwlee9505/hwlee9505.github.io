@@ -9,7 +9,7 @@ permalink: /
 # HyunWoo Development's Blog
 {: .fs-9 }
 
-전자상거래 백엔드 개발자가 되고싶은 이현우 블로그 입니다.
+공부 열심히 하자!
 {: .fs-6 .fw-300 }
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/pmarsceill/just-the-docs){: .btn .fs-5 .mb-4 .mb-md-0 }
