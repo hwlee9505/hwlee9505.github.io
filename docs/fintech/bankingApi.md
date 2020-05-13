@@ -24,7 +24,7 @@ Just the Docs has some specific configuration parameters that can be defined in 
 
 View this site's [_config.yml](https://github.com/pmarsceill/just-the-docs/tree/master/_config.yml) file as an example.
 
-[Link button](https://developers.open-platform.or.kr/mypage/apps){: .btn }
+[금융결제원 테스트베드 사이트](https://developers.open-platform.or.kr/mypage/apps){: .btn }
 
 ## Site logo
 
