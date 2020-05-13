@@ -9,7 +9,7 @@ permalink: /
 # HyunWoo Development's Blog
 {: .fs-9 }
 
-공부 열심히 하자!
+Welcome!
 {: .fs-6 .fw-300 }
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/hwlee9505){: .btn .fs-5 .mb-4 .mb-md-0 }
