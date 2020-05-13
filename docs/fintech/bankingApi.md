@@ -1,9 +1,10 @@
 ---
 layout: default
-title: test
+title: 금융결제원 테스트베드 api활용해서 회원가입하기
 parent: Fintech
-nav_order: 2
+nav_order: 1
 ---
+
 
 # Configuration
 {: .no_toc }
