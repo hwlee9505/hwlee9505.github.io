@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Fintech
+title: test
+parent: Fintech
 nav_order: 1
 ---
 
