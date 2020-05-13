@@ -22,7 +22,7 @@ Just the Docs has some specific configuration parameters that can be defined in 
 ---
 
 
-View this site's [_config.yml](https://github.com/pmarsceill/just-the-docs/tree/master/_config.yml) file as an example.
+먼저 금융결제원 테스트베드 사이트에 접속하여 회원가입을 합니다.
 
 [금융결제원 테스트베드 사이트](https://developers.open-platform.or.kr/mypage/apps){: .btn }
 
