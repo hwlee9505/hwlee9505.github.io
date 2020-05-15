@@ -8,7 +8,7 @@ nav_order: 1
 # 오픈뱅킹 공통업무 API 사용하기
 {: .no_toc }
 
-핀테크 수업에서 오픈뱅킹 공통업무 API를 사용하여 개발실습을 하였다.
+오픈뱅킹 공통업무 API를 사용한 개발실습
 {: .fs-6 .fw-300 }
 
 ## Table of contents
