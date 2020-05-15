@@ -11,12 +11,6 @@ nav_order: 1
 오픈뱅킹 공통업무 API를 사용한 개발실습
 {: .fs-6 .fw-300 }
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
 ---
 
 
