@@ -8,8 +8,6 @@ nav_order: 1
 # 오픈뱅킹 공통업무 API 사용하기
 {: .no_toc }
 
-오픈뱅킹 공통업무 API를 사용한 
-
 잔액조회
 {: .label .label-green }
 거래내역조회
