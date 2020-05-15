@@ -39,10 +39,10 @@ logo: "/assets/images/just-the-docs.png"
 ```
 
 <dl>
-    <dt>오픈뱅킹</dt>
-    <dd>
+    <dd>오픈뱅킹</dd>
+    <dt>
     핀테크기업이 금융서비스를 편리하게 개발할 수 있도록 은행의 금융서비스를 표준화된 형태로 제공하는 인프라를 말하며, 오픈 API와 테스트베드로 구성됩니다.
-    </dd>
+    </dt>
     <dd>Godzilla</dd>
     <dt>Born</dt>
     <dd>1952</dd>
