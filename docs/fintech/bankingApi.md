@@ -31,12 +31,12 @@ nav_order: 1
 
 ## 구조 설명
 
-![](/assets/images/fintech/bankingApi/open1.png)
+![](/assets/images/fintech/bankingApi/banking1.png)
 
 <dl>
     <dt>오픈뱅킹 </dt>
     <dd>
-    핀테크기업이 금융서비스를 편리하게 개발할 수 있도록 은행의 금융서비스를 표준화된 형태로 제공하는 인프라를 말하며, 오픈 API와 테스트베드로 구성됩니다.
+    핀테크기업이 금융서비스를 편리하게 개발할 수 있도록 은행의 금융서비스를 표준화된 형태로 제공하는 인프라를 말하며, 오픈 API와 테스트베드로 구성
     </dd>
     <dt>오픈 API </dt>
     <dd>핀테크기업이 직접 응용프로그램과 서비스를 개발할 수 있도록 공개된 프로그램 도구로서, 7개의 서비스 API와 인증/관리 API 제공</dd>
@@ -46,17 +46,33 @@ nav_order: 1
 
 ```yaml
 오픈뱅킹의 오픈 API를 사용함으로서 여러 은행을 한번에 접근하여 금융 서비스를 테스트 해보거나 상용화 할 수 있다.
-logo: "/assets/images/just-the-docs.png"
 ```
 
 
 
-## 회원가입
+## 회원가입 및 설정
 
 먼저 금융결제원 테스트베드 사이트에 접속하여 회원가입을 합니다.
 
 [금융결제원 테스트베드 사이트](https://developers.open-platform.or.kr){: .btn }
 
+
+![](/assets/images/fintech/bankingApi/banking2.png)
+
+
+![](/assets/images/fintech/bankingApi/banking3.png)
+
+
+![](/assets/images/fintech/bankingApi/banking4.png)
+
+
+![](/assets/images/fintech/bankingApi/banking5.png)
+
+
+![](/assets/images/fintech/bankingApi/banking6.png)
+
+
+![](/assets/images/fintech/bankingApi/banking7.png)
 
 ## Search
 
