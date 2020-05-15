@@ -1,16 +1,14 @@
 ---
 layout: default
-title: 금융결제원 테스트베드 API
+title: 오픈뱅킹 공통업무 API
 parent: Fintech
 nav_order: 1
 ---
 
-
-# Configuration
+# 오픈뱅킹 공통업무 API 사용하기
 {: .no_toc }
 
-
-Just the Docs has some specific configuration parameters that can be defined in your Jekyll site's _config.yml file.
+핀테크 수업에서 오픈뱅킹 공통업무 API를 사용하여 개발실습을 하였다.
 {: .fs-6 .fw-300 }
 
 ## Table of contents
@@ -79,7 +77,8 @@ color_scheme: "dark"
 ```
 <button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
 
-<script type="text/javascript" src="{{ "/assets/js/dark-mode-preview.js" | absolute_url }}"></script>
+
+<script type="text/javascript" src="{{ absolute_url }}"></script>
 
 See [Customization]({{ site.baseurl }}{% link docs/customization.md %}) for more information.
 
