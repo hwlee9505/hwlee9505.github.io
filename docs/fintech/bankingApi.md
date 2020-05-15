@@ -32,6 +32,9 @@ nav_order: 1
 ## 구조 설명
 
 ![](/assets/images/fintech/bankingApi/banking1.png)
+```yaml
+오픈뱅킹을 사용함으로서 여러 은행을 한번에 접근하여 오픈 API의 금융 서비스를 테스트 해보거나 상용화 할 수 있다.
+```
 
 <dl>
     <dt>오픈뱅킹 </dt>
@@ -43,10 +46,6 @@ nav_order: 1
     <dt>테스트베드</dt>
     <dd>개발된 서비스가 금융전산망에서 정상적으로 작동하는지 시험해 볼 수 있는 인프라</dd>
 </dl>
-
-```yaml
-오픈뱅킹의 오픈 API를 사용함으로서 여러 은행을 한번에 접근하여 금융 서비스를 테스트 해보거나 상용화 할 수 있다.
-```
 
 
 
@@ -64,15 +63,16 @@ nav_order: 1
 
 
 ![](/assets/images/fintech/bankingApi/banking4.png)
+```yaml
 
+```
 
 ![](/assets/images/fintech/bankingApi/banking5.png)
 
+오픈API 명세서를 다운로드 합니다.
 
-![](/assets/images/fintech/bankingApi/banking6.png)
+[오픈뱅킹공동업무 오픈API 명세서](https://developers.openbanking.or.kr/guide/sdkdownload/2016077){: .btn }
 
-
-![](/assets/images/fintech/bankingApi/banking7.png)
 
 ## Search
 
