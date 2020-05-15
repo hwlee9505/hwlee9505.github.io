@@ -9,6 +9,7 @@ nav_order: 1
 {: .no_toc }
 
 오픈뱅킹 공통업무 API를 사용한 
+
 잔액조회
 {: .label .label-green }
 거래내역조회
@@ -19,7 +20,7 @@ nav_order: 1
 {: .label .label-green }
 출금이체
 {: .label .label-green }
- 개발실습
+개발실습
 {: .fs-6 .fw-300 }
 
 ## Table of contents
