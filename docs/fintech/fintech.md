@@ -8,5 +8,7 @@ permalink: /docs/fintech
 
 # KISA 한국인터넷진흥원 - 핀테크 아카데미
 
-To make it as easy as possible to write documentation in plain Markdown, most UI components are styled using default Markdown elements with few additional CSS classes needed.
-{: .fs-6 .fw-300 }
+- 핀테크 아카데미 개발실습 초급 과정
+{: .label .label-yellow }
+-  핀테크 아카데미 팀 프로젝트 과정
+{: .label .label-red }
