@@ -8,11 +8,11 @@ permalink: /docs/fintech
 
 # KISA 한국인터넷진흥원 - 핀테크 아카데미
 
-- 핀테크 아카데미 개발실습 초급 과정
+- 핀테크 아카데미 개발실습 초급 과정 수료
 {: .label .label-yellow }
 
 
--  핀테크 아카데미 팀 프로젝트 과정
+-  핀테크 아카데미 팀 프로젝트 과정 수료
 {: .label .label-red }
 
 
