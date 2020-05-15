@@ -24,12 +24,10 @@ nav_order: 1
 
 먼저 금융결제원 테스트베드 사이트에 접속하여 회원가입을 합니다.
 
-[금융결제원 테스트베드 사이트](https://developers.open-platform.or.kr/mypage/apps){: .btn }
+[금융결제원 테스트베드 사이트](https://developers.open-platform.or.kr){: .btn }
 
 ## 구조 설명
 
-
-### Large image
 
 ![](/assets/images/fintech/bankingApi/open1.png)
 
