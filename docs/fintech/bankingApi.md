@@ -8,7 +8,18 @@ nav_order: 1
 # 오픈뱅킹 공통업무 API 사용하기
 {: .no_toc }
 
-오픈뱅킹 공통업무 API를 사용한 잔액조회, 거래내역조회, 계좌실명조회, 입금이체, 출금이체 개발실습
+오픈뱅킹 공통업무 API를 사용한 
+잔액조회
+{: .label .label-green }
+거래내역조회
+{: .label .label-green } 
+계좌실명조회
+{: .label .label-green }
+입금이체
+{: .label .label-green }
+출금이체
+{: .label .label-green }
+ 개발실습
 {: .fs-6 .fw-300 }
 
 ## Table of contents
@@ -22,7 +33,7 @@ nav_order: 1
 ## 회원가입
 
 
-금융결제원 테스트베드 사이트에 접속하여 회원가입을 합니다.
+먼저 금융결제원 테스트베드 사이트에 접속하여 회원가입을 합니다.
 
 [금융결제원 테스트베드 사이트](https://developers.open-platform.or.kr){: .btn }
 
