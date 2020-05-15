@@ -10,6 +10,7 @@ permalink: /docs/fintech
 
 - 핀테크 아카데미 개발실습 초급 과정
 {: .label .label-yellow }
+
 -  핀테크 아카데미 팀 프로젝트 과정
 {: .label .label-red }
 
