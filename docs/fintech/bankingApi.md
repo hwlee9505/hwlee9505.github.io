@@ -31,7 +31,7 @@ nav_order: 1
 
 ### Large image
 
-![](assets/images/fintech/bankingApi/open1.png)
+![](/assets/images/fintech/bankingApi/open1.png)
 
 
 ```yaml
