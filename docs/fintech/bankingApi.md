@@ -26,7 +26,13 @@ nav_order: 1
 
 [금융결제원 테스트베드 사이트](https://developers.open-platform.or.kr/mypage/apps){: .btn }
 
-## Site logo
+## 구조 설명
+
+
+### Large image
+
+![](assets/images/fintech/bankingApi/open1.png)
+
 
 ```yaml
 # Set a path/url to a logo that will be displayed instead of the title
