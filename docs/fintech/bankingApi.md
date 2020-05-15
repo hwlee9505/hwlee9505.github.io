@@ -33,11 +33,6 @@ nav_order: 1
 
 ![](/assets/images/fintech/bankingApi/open1.png)
 
-```yaml
-Open API를 사용함으로서 여러 은행을 한번에 접근할 수 있다.
-logo: "/assets/images/just-the-docs.png"
-```
-
 <dl>
     <dt>오픈뱅킹 </dt>
     <dd>
@@ -49,8 +44,14 @@ logo: "/assets/images/just-the-docs.png"
     <dd>개발된 서비스가 금융전산망에서 정상적으로 작동하는지 시험해 볼 수 있는 인프라</dd>
 </dl>
 
-## 회원가입
+```yaml
+오픈뱅킹의 오픈 API를 사용함으로서 여러 은행을 한번에 접근하여 금융 서비스를 테스트 해보거나 상용화 할 수 있다.
+logo: "/assets/images/just-the-docs.png"
+```
 
+
+
+## 회원가입
 
 먼저 금융결제원 테스트베드 사이트에 접속하여 회원가입을 합니다.
 
