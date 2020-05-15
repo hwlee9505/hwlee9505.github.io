@@ -6,6 +6,11 @@ has_children: true
 permalink: /docs/fintech
 ---
 
+# 핀테크의 정의
+
+금융(Finance) + 기술(Technique)의 합성어로 모바일 결제 및 송금,대출,개인 자산관리 등 IT를 기반으로 한 새로운 금융서비스를 의미
+
+
 # KISA 한국인터넷진흥원 - 핀테크 아카데미
 
 - 핀테크 아카데미 개발실습 초급 과정 수료

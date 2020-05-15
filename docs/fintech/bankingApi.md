@@ -22,18 +22,19 @@ nav_order: 1
 ## 회원가입
 
 
-먼저 금융결제원 테스트베드 사이트에 접속하여 회원가입을 합니다.
+금융결제원 테스트베드 사이트에 접속하여 회원가입을 합니다.
 
 [금융결제원 테스트베드 사이트](https://developers.open-platform.or.kr){: .btn }
 
-## 구조 설명
 
+## 구조 설명
 
 ![](/assets/images/fintech/bankingApi/open1.png)
 
 
 ```yaml
-# Set a path/url to a logo that will be displayed instead of the title
+
+# Open API를 사용함으로서 여러 은행을 한번에 접근할 수 있다.
 logo: "/assets/images/just-the-docs.png"
 ```
 
