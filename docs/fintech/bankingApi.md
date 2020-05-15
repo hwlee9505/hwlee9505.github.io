@@ -8,7 +8,7 @@ nav_order: 1
 # 오픈뱅킹 공통업무 API 사용하기
 {: .no_toc }
 
-오픈뱅킹 공통업무 API를 사용한 개발실습
+오픈뱅킹 공통업무 API를 사용한 잔액조회, 거래내역조회, 계좌실명조회, 입금이체, 출금이체 개발실습
 {: .fs-6 .fw-300 }
 
 ## Table of contents
@@ -33,7 +33,6 @@ nav_order: 1
 
 
 ```yaml
-
 # Open API를 사용함으로서 여러 은행을 한번에 접근할 수 있다.
 logo: "/assets/images/just-the-docs.png"
 ```
