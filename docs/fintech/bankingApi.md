@@ -43,12 +43,10 @@ logo: "/assets/images/just-the-docs.png"
     <dt>
     핀테크기업이 금융서비스를 편리하게 개발할 수 있도록 은행의 금융서비스를 표준화된 형태로 제공하는 인프라를 말하며, 오픈 API와 테스트베드로 구성됩니다.
     </dt>
-    <dd>Godzilla</dd>
-    <dt>Born</dt>
-    <dd>1952</dd>
-    <dt>Birthplace</dt>
-    <dd>Japan</dd>
-    <dt>Color</dt>
+    <dd>오픈 API(Application Programming Interface)</dd>
+    <dt>핀테크기업이 직접 응용프로그램과 서비스를 개발할 수 있도록 공개된 프로그램 도구로서, 7개의 서비스 API와 인증/관리 API 제공</dt>
+    <dd>테스트베드</dd>
+    <dt>개발된 서비스가 금융전산망에서 정상적으로 작동하는지 시험해 볼 수 있는 인프라</dt>
 </dl>
 
 ## 회원가입
