@@ -8,6 +8,8 @@ nav_order: 1
 # 오픈뱅킹 공통업무 API 사용하기
 {: .no_toc }
 
+개발실습
+{: .fs-6 .fw-300 }
 잔액조회
 {: .label .label-green }
 거래내역조회
@@ -18,8 +20,6 @@ nav_order: 1
 {: .label .label-green }
 출금이체
 {: .label .label-green }
-개발실습
-{: .fs-6 .fw-300 }
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -29,6 +29,28 @@ nav_order: 1
 
 ---
 
+## 구조 설명
+
+![](/assets/images/fintech/bankingApi/open1.png)
+
+```yaml
+Open API를 사용함으로서 여러 은행을 한번에 접근할 수 있다.
+logo: "/assets/images/just-the-docs.png"
+```
+
+<dl>
+    <dt>오픈뱅킹</dt>
+    <dd>
+    핀테크기업이 금융서비스를 편리하게 개발할 수 있도록 은행의 금융서비스를 표준화된 형태로 제공하는 인프라를 말하며, 오픈 API와 테스트베드로 구성됩니다.
+    </dd>
+    <dd>Godzilla</dd>
+    <dt>Born</dt>
+    <dd>1952</dd>
+    <dt>Birthplace</dt>
+    <dd>Japan</dd>
+    <dt>Color</dt>
+</dl>
+
 ## 회원가입
 
 
@@ -36,16 +58,6 @@ nav_order: 1
 
 [금융결제원 테스트베드 사이트](https://developers.open-platform.or.kr){: .btn }
 
-
-## 구조 설명
-
-![](/assets/images/fintech/bankingApi/open1.png)
-
-
-```yaml
-# Open API를 사용함으로서 여러 은행을 한번에 접근할 수 있다.
-logo: "/assets/images/just-the-docs.png"
-```
 
 ## Search
 
