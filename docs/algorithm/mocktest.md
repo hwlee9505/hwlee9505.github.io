@@ -1,25 +1,12 @@
 ---
 layout: default
-title: 완전탐색 / 모의고사
+title: [\Java\]모의고사 level1
 parent: Algorithm
 nav_order: 1
 ---
 
-# 오픈뱅킹 공통업무 API 사용하기
+# 모의고사
 {: .no_toc }
-
-개발실습
-{: .fs-6 .fw-300 }
-잔액조회
-{: .label .label-green }
-거래내역조회
-{: .label .label-green } 
-계좌실명조회
-{: .label .label-green }
-입금이체
-{: .label .label-green }
-출금이체
-{: .label .label-green }
 
 ## Table of contents
 {: .no_toc .text-delta }
