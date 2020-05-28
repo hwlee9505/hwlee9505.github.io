@@ -8,12 +8,6 @@ nav_order: 1
 # 모의고사
 {: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
 ---
 
 ## 문제 설명
