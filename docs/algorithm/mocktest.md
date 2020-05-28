@@ -1,6 +1,6 @@
 ---
 layout: default
-title: [\Java\]모의고사 level1
+title: 모의고사 level1
 parent: Algorithm
 nav_order: 1
 ---
