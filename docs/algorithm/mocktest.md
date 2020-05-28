@@ -55,8 +55,8 @@ nav_order: 1
 
 ## 해결 코드
 ```yaml
-import java.util.ArrayList;
-class Solution {
+# import java.util.ArrayList;
+# class Solution {
     public int[] solution(int[] answer) {
         int[] a = {1, 2, 3, 4, 5};
         int[] b = {2, 1, 2, 3, 2, 4, 2, 5};
@@ -74,5 +74,5 @@ class Solution {
         if(maxScore == score[2]) {list.add(3);}
         return list.stream().mapToInt(i->i.intValue()).toArray();
     }
-}
+# }
 ```
