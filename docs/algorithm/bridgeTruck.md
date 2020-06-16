@@ -30,55 +30,113 @@ nav_order: 2
 | 6~7          | [7,4,5]           | [6]               | []                |
 | 8            | [7,4,5,6]         | []                | []                |
 
+따라서, 모든 트럭이 다리를 지나려면 최소 8초가 걸립니다.  
+solution 함수의 매개변수로 다리 길이 bridge_length, 다리가 견딜 수 있는 무게 weight, 트럭별 무게 truck_weights가 주어집니다.   
+이때 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 return 하도록 solution 함수를 완성하세요.
 
 ## 제한 조건
 
-- 시험은 최대 10,000 문제로 구성되어있습니다.
-- 문제의 정답은 1, 2, 3, 4, 5중 하나입니다.
-- 가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.
+- bridge_length는 1 이상 10,000 이하입니다.
+- weight는 1 이상 10,000 이하입니다.
+- truck_weights의 길이는 1 이상 10,000 이하입니다.
+- 모든 트럭의 무게는 1 이상 weight 이하입니다.
 
 
 ## 입출력 예
 
-| answers      | return            | 
-|:-------------|:------------------|
-| [1,2,3,4,5]  | [1]               |
-| [1,3,2,4,2]  | [1,2,3]           |
+| bridge_length| weight            | truck_weights                    | return     | 
+|:-------------|:------------------|:---------------------------------|:-----------|
+| 2            | 10                | [7,4,5,6]                        | 8          |
+| 100          | 100               | [10]                             | 101        |
+| 100          | 100               | [10,10,10,10,10,10,10,10,10,10,] | 110        |
 
-## 입출력 예 설명
-
-### 입출력 예 #1
-
-- 수포자 1은 모든 문제를 맞혔습니다.
-- 수포자 2는 모든 문제를 틀렸습니다.
-- 수포자 3은 모든 문제를 틀렸습니다.
-
-따라서 가장 문제를 많이 맞힌 사람은 수포자 1입니다.
-
-### 입출력 예 #2
-
-- 모든 사람이 2문제씩을 맞췄습니다.
 
 ## 해결 코드
 ```yaml
-# import java.util.ArrayList;
-# class Solution {
-#    public int[] solution(int[] answer) {
-#        int[] a = {1, 2, 3, 4, 5};
-#        int[] b = {2, 1, 2, 3, 2, 4, 2, 5};
-#        int[] c = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-#        int[] score = new int[3];
-#        for(int i=0; i<answer.length; i++) {
-#            if(answer[i] == a[i%a.length]) {score[0]++;}
-#            if(answer[i] == b[i%b.length]) {score[1]++;}
-#            if(answer[i] == c[i%c.length]) {score[2]++;}
-#        }
-#        int maxScore = Math.max(score[0], Math.max(score[1], score[2]));
-#        ArrayList<Integer> list = new ArrayList<>();
-#        if(maxScore == score[0]) {list.add(1);}
-#        if(maxScore == score[1]) {list.add(2);}
-#        if(maxScore == score[2]) {list.add(3);}
-#        return list.stream().mapToInt(i->i.intValue()).toArray();
-#    }
+# package bridgeTruck;
+# 
+# import java.util.LinkedList;
+# import java.util.Queue;
+# 
+# public class MoreBridgeTruck {
+# 
+#     public static void main(String[] args) {
+#         System.out.println(solution(2, 10, new int[]{7, 6, 5, 4}));
+#     }
+# 
+#     public static int solution(int bridgeLength, int weight, int[] truckWeights) {
+# 
+#         int nowTime = 0;    //  현재시각
+#         int totalWeight = 0;    //  다리위의 무게
+# 
+#         Queue<Truck> waitQ = new LinkedList<>();
+#         Queue<Truck> moveQ = new LinkedList<>();
+# 
+#         for (int i : truckWeights) {
+#             Truck t = new Truck(i);
+#             waitQ.offer(t);
+#         }
+# 
+#         while (!waitQ.isEmpty() || !moveQ.isEmpty()) {
+# 
+#             nowTime++;
+# 
+#             // [1 - 다리위에 지나가는 트럭이 없을 경우]
+#             // 1) 다라위의 총무게에 기다리는 다음 트럭 객체의 무게를 더하고
+#             // 2) 다리위를 지나는 트럭 큐에 삽입한다.
+#             if (moveQ.isEmpty()) {
+#                 Truck t = waitQ.poll();
+#                 totalWeight += t.weight;
+#                 moveQ.offer(t);
+#                 continue;
+#             }
+# 
+#             // [2 - 다리위에 지나가는 트럭이 있는 경우]
+# 
+# 
+#             // 1) 다리위를 지나는 트럭의 모든 객체들의 move 속성을 1씩 증가시킨다.
+#             for(Truck t : moveQ){
+#                 t.moving();
+#             }
+# 
+#             // 조건 2) 다리위를 지나는 트럭 이동반경이 다리길이보다 길다면?
+#             // ㄴ 움직이고 있는 트럭의 무게를 다리위 총무게에 뺀다. + moveQ에서도 빼낸다.
+#             if(moveQ.peek().move > bridgeLength){
+#                 Truck t = moveQ.poll();
+#                 totalWeight -= t.weight;
+#             }
+# 
+# 
+#             // 조건 3) 기다리는 트럭이 있고 && 다리위 총 무게 + 다음 트럭의 무게 <= 다리가 버틸 수 있는 무게
+#             // ㄴ 대기하고 있는 다음 트럭의 무게를 다리위 총 무게에 더하고 다리위를 지나는 큐에 삽입.
+# 
+#             if(!waitQ.isEmpty() && (totalWeight + waitQ.peek().weight <= weight)){
+# 
+#                 Truck t = waitQ.poll();
+#                 totalWeight += t.weight;
+#                 moveQ.offer(t);
+#             }
+# 
+#         }
+# 
+#         return nowTime;
+# 
+#     }
+# 
+# }
+# 
+# class Truck {
+#     int weight;
+#     int move;
+# 
+#     Truck(int weight) {
+#         this.weight = weight;
+#         this.move = 1;
+#     }
+# 
+#     void moving() {
+#         this.move++;
+#     }
+# 
 # }
 ```
