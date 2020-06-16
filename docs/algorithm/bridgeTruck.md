@@ -5,7 +5,7 @@ parent: Algorithm
 nav_order: 2
 ---
 
-# 다리위를 지나는 트럭
+# 다리위를 지나는 트럭 (자료구조 Queue)
 {: .no_toc }
 
 ---
