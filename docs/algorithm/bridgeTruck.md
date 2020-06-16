@@ -50,7 +50,7 @@ solution 함수의 매개변수로 다리 길이 bridge_length, 다리가 견딜
 | 100          | 100               | [10]                             | 101        |
 | 100          | 100               | [10,10,10,10,10,10,10,10,10,10,] | 110        |
 
-## 정의
+## 해결 전략
 
 ![](/assets/images/algorithm/bridgeTruck.JPG)
                                                    
