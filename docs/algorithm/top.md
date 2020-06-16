@@ -86,7 +86,7 @@ nav_order: 3
 #             // 맨위의 것을 temp에 담아줌
 #             int temp = topS.pop();
 # 
-#             // 이제 이 로직이 빡세다
+#             // 스택으로 빼주면서 가장 주변에 있는 자신보다 높은 타워를 answer[]에 삽입
 #             for(int i = topS.size(); i>=0; i--){
 #                 if(temp < heights[i]){
 #                     answer[topS.size()] = i+1;
