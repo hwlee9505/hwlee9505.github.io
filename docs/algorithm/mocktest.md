@@ -5,7 +5,7 @@ parent: Algorithm
 nav_order: 1
 ---
 
-# 모의고사
+# 모의고사 (완전 탐색)
 {: .no_toc }
 
 ---
