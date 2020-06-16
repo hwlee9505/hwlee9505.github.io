@@ -5,7 +5,7 @@ parent: Algorithm
 nav_order: 3
 ---
 
-# 탑 (스택)
+# 탑 (자료구조 Stack)
 {: .no_toc }
 
 ---
