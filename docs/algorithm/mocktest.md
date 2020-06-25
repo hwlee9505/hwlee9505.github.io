@@ -47,6 +47,10 @@ nav_order: 1
 
 - 모든 사람이 2문제씩을 맞췄습니다.
 
+## 해결 전략
+
+![](/assets/images/algorithm/mockTest.jpg)
+
 ## 해결 코드1
 ```yaml
 # import java.util.ArrayList;
