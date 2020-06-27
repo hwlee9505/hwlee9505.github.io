@@ -66,6 +66,11 @@ nav_order: 3
 [6] 번째 탑이 쏜 신호는 5번째 탑이 수신합니다.
 [7] 번째 탑이 쏜 신호는 6번째 탑이 수신합니다.
 
+## 해결 전략
+
+![](/assets/images/algorithm/top.jpeg)
+
+
 ## 해결 코드
 ```yaml
 # import java.util.Stack;
