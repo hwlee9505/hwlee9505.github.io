@@ -66,46 +66,72 @@ nav_order: 4
 
 ## 해결 코드1
 ```yaml
-# import java.util.ArrayList;
+# import java.util.Stack;
+# 
 # class Solution {
-#    public int[] solution(int[] answer) {
-#       int[] a = {1,2,3,4,5};
-#       int[] b = {2,1,2,3,2,4,2,5};
-#       int[] c = {3,3,1,1,2,2,4,4,5,5};
-#
-#       int[] scores = new int[3];
-#
-#       for(int i = 0 ; i < answers.length; i++){
-#           if(answers[i] == a[i%a.length]){
-#               scores[0]++;
-#           }
-#
-#           if(answers[i] == b[i%b.length]){
-#               scores[1]++;
-#           }
-#
-#           if(answers[i] == c[i%c.length]){
-#               scores[2]++;
-#           }
-#       }
-#
-#       int max = Math.max(scores[0],Math.max(scores[1],scores[2]));
-#
-#       ArrayList<Integer> list = new ArrayList<>();
-#
-#       if(max==scores[0]) list.add(1);
-#       if(max==scores[1]) list.add(2);
-#       if(max==scores[2]) list.add(3);
-#
-#       int[] answer = new int[list.size()];
-#
-#       for(int i = 0 ; i< answer.length; i++){
-#           answer[i] = list.get(i);
-#       }
-#
-#       return answer;
-#
-#    }
+#     public int solution(int[][] board, int[] moves) {
+#         Stack<Integer> basket = new Stack<>();
+#         Stack<Integer>[] stacks = new Stack[board[0].length];
+# 
+#         for (int i = 0; i < board[0].length; i++) {
+#             stacks[i] = new Stack();
+#         }
+# 
+#         // for (int i = 0; i < board.length; i++) {
+#         //     for (int j = 0; j < board[0].length; j++) {
+#         //         System.out.print("[" + i + "," + j + "] - ");
+#         //         System.out.print(board[i][j] + "   ");
+#         //     }
+#         //     System.out.println();
+#         // }
+# 
+#         // 스택이기에 순서를 뒤집어 넣어준다.
+#         for (int i = board.length - 1; i >= 0; i--) {
+#             for (int j = 0; j < board[0].length; j++) {
+#                 if (board[i][j] != 0) {
+#                     stacks[j].push(board[i][j]);
+#                 }
+#             }
+#         }
+# 
+#         // popCount == 바구니에 담는 과정에서 터트려져 사라진 인형
+#         int popCount = 0;
+# 
+#         // 여기서 부터 Client가 인형뽑기 조정
+#         for (int i = 0; i < moves.length; i++) {
+# 
+#             // index == 크레인이 움직이는 인덱스 -1
+#             int index = moves[i] - 1;
+# 
+#             if (!stacks[index].isEmpty()) {     //   만약 인형이 없는 곳에서 크레인을 작동시키는 경우에는 아무런 일도 일어나지 않습니다.
+# 
+#                 // temp에 옮겨 놓은 거랑 basket 에 제일 위에 담기거 랑
+#                 // 1)같다면
+#                 //   basket pop 하고 basket에 temp를 push해줄 필요 없으며 popCount는 +2 해보리기
+# 
+#                 // 2)다르다면
+#                 //   그냥 temp를 basket에 push
+# 
+#                 // 1) 인형이 담긴 스택에 인형을 없애고 바구니에 담는 과정.
+#                 int temp = stacks[index].pop();
+# 
+# 
+#                 // 2) 바구니에서 터트리기. 바구니가 비지 않은 조건 이기도 하여 함.
+#                 if (!basket.isEmpty()) {
+#                     if (temp == basket.peek()) {
+#                         basket.pop();
+#                         popCount += 2;
+#                     } else {
+#                         basket.push(temp);
+#                     }
+#                 } else {
+#                     basket.push(temp);
+#                 }
+#             }
+#         }
+# 
+#         return popCount;
+#     }
 # }
 ```
 
