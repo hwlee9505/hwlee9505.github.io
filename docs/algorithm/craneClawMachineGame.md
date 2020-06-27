@@ -2,7 +2,7 @@
 layout: default
 title: 크레인 인형뽑기 게임 level 1
 parent: Algorithm
-nav_order: 1
+nav_order: 4
 ---
 
 # 크레인 인형뽑기 게임 (자료구조 Stack)
