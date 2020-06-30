@@ -2,7 +2,7 @@
 layout: default
 title: CodeUp 3102
 parent: Algorithm
-nav_order: 6
+nav_order: 7
 ---
 
 # CodeUp 3102 (자료구조 Stack)
