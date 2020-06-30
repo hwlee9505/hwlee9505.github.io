@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CodeUp 3102:STL stack
+title: CodeUp 3102 : STL stack
 parent: Algorithm
 nav_order: 6
 ---
