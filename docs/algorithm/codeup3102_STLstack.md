@@ -39,14 +39,14 @@ push와 pop은 출력되는 결과가 없음에 유의한다.
 
 ### 입력 예시
 
-7
-push( 5 )
-top()
-push( 7 )
-push( 3 )
-top()
-pop()
-size()
+7  
+push( 5 )  
+top()  
+push( 7 )  
+push( 3 )  
+top()  
+pop()  
+size()  
 
 ### 출력 예시
 
