@@ -71,7 +71,7 @@ nav_order: 3
 ![](/assets/images/algorithm/top.jpeg)
 
 
-## 해결 코드
+## 해결 코드1
 ```yaml
 # import java.util.Stack;
 # class Solution {
@@ -100,6 +100,83 @@ nav_order: 3
 #             }
 #         }
 #         return answer;
+#     }
+# }
+```
+
+## 해결 코드2
+```yaml
+# import java.io.BufferedReader;
+# import java.io.IOException;
+# import java.io.InputStreamReader;
+# import java.util.Stack;
+# import java.util.StringTokenizer;
+# 
+# public class Main {
+# 
+#     public static void main(String[] args) throws IOException {
+# 
+#         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+#         int size = Integer.parseInt(br.readLine());
+# 
+#         int hegihts[] = new int[size];
+# 
+#         StringTokenizer st = new StringTokenizer(br.readLine()," ");
+# 
+#         int index = 0;
+#         while(st.hasMoreTokens()){
+#             hegihts[index++] = Integer.parseInt(st.nextToken());
+#         }
+# 
+#         for(int i : solution(hegihts)){
+#             System.out.print(i + " ");
+#         }
+#     }
+# 
+#     public static int[] solution(int[] height) {
+# 
+#         Stack<Tower> stack = new Stack<>();
+#         int[] answer = new int[height.length];
+# 
+#         for (int i = 0; i < height.length; i++) {
+#             Tower tower = new Tower(i + 1, height[i]);
+#             int receiveIdx = 0;
+# 
+# 
+#             // 스택이 비어있지 않다면
+#             while(!stack.isEmpty()){
+#                 // 스택 상위의 것을 객체로 변환 시키고
+#                 Tower top = stack.peek();
+#                 // 그 변환시킨 객체의 높이와 새로 생성한 타워의 높이와 비교한다.
+#                 if(top.height > tower.height){
+#                     receiveIdx = top.idx;
+#                     break;
+#                 }
+#                 stack.pop();
+#             }
+# 
+#             stack.push(tower);
+#             answer[i] = receiveIdx;
+# 
+#         }
+# 
+#         return answer;
+#     }
+# }
+# 
+# class Tower {
+# 
+#     int idx;
+#     int height;
+# 
+#     public Tower(int idx, int height) {
+#         this.idx = idx;
+#         this.height = height;
+#     }
+# 
+#     @Override
+#     public String toString() {
+#         return "idx : " + idx + " height : " + height;
 #     }
 # }
 ```
