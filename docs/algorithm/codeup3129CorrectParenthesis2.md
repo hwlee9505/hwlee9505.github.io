@@ -8,7 +8,7 @@ nav_order: 9
 # CodeUp 3127 (자료구조 Stack 괄호 검사)
 {: .no_toc }
 [동빈나_중위표기법을 후위표기법으로 변환하기](http://blog.naver.com/PostView.nhn?blogId=ndb796&logNo=220654116881&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
----
+
 
 ## 문제 설명
 
