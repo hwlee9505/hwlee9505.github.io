@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Stack 중위표기법->후위표기법
+title: Stack 중위-> 후위 표기법
 parent: Algorithm
 nav_order: 11
 ---
