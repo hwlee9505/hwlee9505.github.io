@@ -5,7 +5,7 @@ parent: Algorithm
 nav_order: 11
 ---
 
-# CodeUp 4833 쇠막대기 (자료구조 Stack)
+# Info 스택 중위표기법 -> 후위표기법
 {: .no_toc }
 
 ---
