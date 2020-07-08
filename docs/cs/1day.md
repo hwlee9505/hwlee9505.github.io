@@ -10,8 +10,6 @@ nav_order: 1
 
 ---
 
-## Table of contents
-{: .no_toc .text-delta }
 
 ## 자료구조에서 set과 list의 차이는?
 
