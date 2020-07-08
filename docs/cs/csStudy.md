@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Algorithm
+title: CS 지식
 nav_order: 12
 has_children: true
-permalink: /docs/algorithm
+permalink: /docs/cs
 ---
 
 
