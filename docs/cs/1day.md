@@ -29,9 +29,15 @@ list : 순서 있음(index 사용 가능), 중복 허용
 
 프로세스는 독립된 메모리 공간을 가지지만, 스레드는 한 프로세스 내에서 메모리를 공 유하므로 비용이 더 작다.
 
+[관련 링크](https://arer.tistory.com/80){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+
+
 ## 다대다 테이블의 관계를 스키마로 어떻게 작성할래?
 
 매핑 테이블을 사용한다
+
+[관련 링크](https://siyoon210.tistory.com/26){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+
 
 ## 리팩토링이란?
 
