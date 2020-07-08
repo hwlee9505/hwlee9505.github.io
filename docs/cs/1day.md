@@ -10,8 +10,15 @@ nav_order: 1
 
 ---
 
+![](/assets/images/cs/week1.jpg)
+
 
 ## 자료구조에서 set과 list의 차이는?
+
+```scss
+list : 순서가 중요 -> 중복 허용  
+set : 순서는 중요하지 않은데 -> 중복 허용 안됨
+```
 
 set : 순서 없음, 중복 데이터 불가(집합 성격)  
 list : 순서 있음(index 사용 가능), 중복 허용  
