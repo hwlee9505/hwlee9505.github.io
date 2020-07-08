@@ -5,7 +5,7 @@ parent: CS 지식
 nav_order: 1
 ---
 
-# 다리위를 지나는 트럭 (자료구조 Queue)
+# SW 작무 면접 스터디 1주차
 {: .no_toc }
 
 ---
