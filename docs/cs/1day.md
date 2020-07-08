@@ -5,7 +5,7 @@ parent: CS 지식
 nav_order: 1
 ---
 
-# SW 작무 면접 스터디 1주차
+# SW 직무 면접 스터디 1주차
 {: .no_toc }
 
 ---
