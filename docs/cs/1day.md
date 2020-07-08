@@ -39,12 +39,20 @@ list : 순서 있음(index 사용 가능), 중복 허용
 
 ## 다대다 테이블의 관계를 스키마로 어떻게 작성할래?
 
+```scss
+외래키를 통해서 두 테이블을 엮어서 만들 것입니다.
+```
+
 매핑 테이블을 사용한다
 
 [관련 링크](https://siyoon210.tistory.com/26){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 
 ## 리팩토링이란?
+
+```scss
+잘 모르겠습니다.
+```
 
 리팩터링(refactoring)은 소프트웨어 공학에서 '결과의 변경 없이 코드의 구조를 재조정함'을 뜻한다.  
 주로 가독성을 높이고 유지보수를 편하게 한다.  
@@ -53,6 +61,13 @@ list : 순서 있음(index 사용 가능), 중복 허용
 (위키피디아)
 
 ## http와 https의 차이점?
+
+```scss
+HTTP는 클라이언트와 서버를 나눌 때 데이터를 통신할 때 사용하는 프로토콜  
+HTTPS : 더 보안적으로 이루어진걸로 알고 있습니다.  
+HTTP는 보안 적용되지 않았나 ? HTTP보다는 떨어지는 걸로 알고 있습니다.  
+```
+
 HTTPS(HyperText Transfer Protocol over Secure Socket Layer, HTTP over  
 TLS,[1][2] HTTP over SSL,[3] HTTP Secure[4][5])는  
 월드 와이드 웹 통신 프로토콜인 HTTP의 보안이 강화된 버전이다.  
