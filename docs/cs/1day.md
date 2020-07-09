@@ -83,3 +83,22 @@ HTTPS는 소켓 통신에서 일반 텍스트를 이용하는 대신에, SSL이�
 HTTPS의 기본 TCP/IP 포트는 443이다.  
 HTTPS를 사용하는 웹페이지의 URI는 'http://'대신 'https://'로 시작한다.  
 (위키피디아)
+
+---
+
+## ArrayList vs LinkedList -> bigO 시간은?
+  
+조회 삽입 삭제 갱신 :  
+
+ArrayList 
+삽입 삭제 : O(n) 
+수정 : O(1)
+
+LinkedList 모두 : O(1)
+
+
+## Abstract vs Interface
+
+Abstract : 객체 지향의 상속 받아서 추상 클래스를 구현해서 다형성을 만족 시킬 수 있게 사용 하는 것  
+(다형성 : Overloading / overriding -> 상속 클래스마다 다르게 함수 내용을 바꿔서 실행할 수 있는 개념)  
+Interface : 설계 명세 등을 필요할 때
