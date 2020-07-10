@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CodeUp 1930
+title: CodeUp 1930 x
 parent: Algorithm
 nav_order: 13
 ---
