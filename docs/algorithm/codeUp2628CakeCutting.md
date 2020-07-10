@@ -16,7 +16,7 @@ nav_order: 16
 오른쪽 그림과 같이 케익의 둘레에 시계방향으로 1 100까지 일정한 간격으로 번호가 부여되어 있다.  
 
 
-![](/assets/images/algorithm/cakeCutting1.pnga)
+![](/assets/images/algorithm/cakeCutting1.png)
 
 칼로 자르려고 하는 부분은 2개의 정수로 표현한다.  
 이 2번의 칼질로 4조각의 케잌을 만들려면 반드시 교차하는 부분이 생긴다.  
