@@ -79,7 +79,7 @@ nav_order: 20
 # 
 #         Map<String, String> map = new HashMap<>();
 # 
-#         // phone_book의 데이터를 key로 넣고 value를 0으로 default
+#         // phone_book의 데이터를 key로 넣고 value를 또 phone_book의 데이터로 default
 #         for (String s : phone_book) {
 #             map.put(s, s);
 #         }
