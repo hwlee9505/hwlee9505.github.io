@@ -6,7 +6,6 @@ nav_order: 21
 ---
 
 # 위장 (해시)
-{: .no_toc }
 
 ---
 
@@ -64,65 +63,64 @@ face에 해당하는 의상이 crow_mask, blue_sunglasses, smoky_makeup이므로
 ```
 ## 해결 코드
 ```yaml
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
-public class Main {
-
-    /*
-        1) -- ●, ○            ==      2개
-        2) -- A, B, C         ==      3개
-        3) -- ㄱ, ㄴ           ==      2개
-
-        있다고 할 떄
-        최소 하나 라도 쓰고 있는 모든 경우의 수는?
-
-        result = (2 + 1) * ( 3 + 1 ) * (2 + 1) - 1;
-     */
-
-
-    public static void main(String[] args) {
-        System.out.println(solution(new String[][]{{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}}));
-    }
-
-    public static int solution(String[][] clothes) {
-
-        Map<String, Integer> map = new HashMap<>();
-
-
-        // 맵에 키값이 중복 불가 이므로 중복 생각은 안해도 된다.
-        for(int i = 0 ; i < clothes.length; i++){
-
-            String tempKey = clothes[i][1];
-            if(map.get(tempKey) == null) {
-                map.put(tempKey, 1);
-            }else{
-                // ✨✨ 완주하지 못한 선수들에서 썼던 로직인데 이제 좀 기억해라
-                int value = map.get(tempKey) + 1;
-                map.put(tempKey, value);
-            }
-        }
-
-        int[] temp = new int[map.size()];
-        int index = 0;
-
-        Set set = map.entrySet();
-        Iterator it = set.iterator();
-
-        while(it.hasNext()){
-            Map.Entry e = (Map.Entry) it.next();
-
-            temp[index++] = (Integer) e.getValue() + 1;
-        }
-
-        int result = 1;
-        for(int i : temp){
-            result *= i;
-        }
-
-        return result -1;
-    }
-}
+# import java.util.HashMap;
+# import java.util.Iterator;
+# import java.util.Map;
+# import java.util.Set;
+# 
+# public class Main {
+# 
+#     /*
+#         1) -- ●, ○            ==      2개
+#         2) -- A, B, C         ==      3개
+#         3) -- ㄱ, ㄴ           ==      2개
+# 
+#         있다고 할 떄
+#         최소 하나 라도 쓰고 있는 모든 경우의 수는?
+# 
+#         result = (2 + 1) * ( 3 + 1 ) * (2 + 1) - 1;
+#      */
+# 
+# 
+#     public static void main(String[] args) {
+#         System.out.println(solution(new String[][]{{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}}));
+#     }
+# 
+#     public static int solution(String[][] clothes) {
+# 
+#         Map<String, Integer> map = new HashMap<>();
+# 
+#         // 맵에 키값이 중복 불가 이므로 중복 생각은 안해도 된다.
+#         for(int i = 0 ; i < clothes.length; i++){
+# 
+#             String tempKey = clothes[i][1];
+#             if(map.get(tempKey) == null) {
+#                 map.put(tempKey, 1);
+#             }else{
+#                 // ✨✨ 완주하지 못한 선수들에서 썼던 로직인데 이제 좀 기억해라
+#                 int value = map.get(tempKey) + 1;
+#                 map.put(tempKey, value);
+#             }
+#         }
+# 
+#         int[] temp = new int[map.size()];
+#         int index = 0;
+# 
+#         Set set = map.entrySet();
+#         Iterator it = set.iterator();
+# 
+#         while(it.hasNext()){
+#             Map.Entry e = (Map.Entry) it.next();
+# 
+#             temp[index++] = (Integer) e.getValue() + 1;
+#         }
+# 
+#         int result = 1;
+#         for(int i : temp){
+#             result *= i;
+#         }
+# 
+#         return result -1;
+#     }
+# }
 ```
