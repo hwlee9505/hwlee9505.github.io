@@ -63,7 +63,7 @@ face에 해당하는 의상이 crow_mask, blue_sunglasses, smoky_makeup이므로
 3. smoky_makeup
 ```
 ## 해결 코드
-```markdown
+```yaml
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
