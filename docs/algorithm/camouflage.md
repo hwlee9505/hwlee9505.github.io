@@ -22,7 +22,7 @@ nav_order: 21
 | 하의 | 청바지                  |
 | 겉옷 | 긴 코트                 |
 
-스파이가 가진 의상들이 |담긴 2차원 배열 clothes가 주어질 때 서로 다른 옷의 조합의 수를 return 하도록 solution 함수를 작성해주세요.  
+스파이가 가진 의상들이 담긴 2차원 배열 clothes가 주어질 때 서로 다른 옷의 조합의 수를 return 하도록 solution 함수를 작성해주세요.  
 
 ## 제한 사항
 
@@ -33,105 +33,87 @@ nav_order: 21
 * 모든 문자열의 길이는 1 이상 20 이하인 자연수이고 알파벳 소문자 또는 '_' 로만 이루어져 있습니다.
 * 스파이는 하루에 최소 한 개의 의상은 입습니다.
 
+## 입출력 예 설명
 
-## 입출력 예
+### 예제 #1
 
-| clothes                                                                                          | return     |
-|:-------------------------------------------------------------------------------------------------|:-----------|
-| ["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]	       | 5          |
-| ["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"]                     | 3          |
+headgear에 해당하는 의상이 yellow_hat, green_turban이고 eyewear에 해당하는 의상이 blue_sunglasses이므로 아래와 같이 5개의 조합이 가능합니다.   
+```markdown
+1. yellow_hat  
+2. blue_sunglasses  
+3. green_turban  
+4. yellow_hat + blue_sunglasses  
+5. green_turban + blue_sunglasses  
+```
 
-## 해결 전략
+### 예제 #2
 
-![](/assets/images/algorithm/bridgeTruck.JPG)
-                                                   
-
+face에 해당하는 의상이 crow_mask, blue_sunglasses, smoky_makeup이므로 아래와 같이 3개의 조합이 가능합니다.  
+```markdown
+1. crow_mask
+2. blue_sunglasses
+3. smoky_makeup
+```
 ## 해결 코드
 ```yaml
-# package bridgeTruck;
+# import java.util.HashMap;
+# import java.util.Iterator;
+# import java.util.Map;
+# import java.util.Set;
 # 
-# import java.util.LinkedList;
-# import java.util.Queue;
+# public class Main {
 # 
-# public class MoreBridgeTruck {
+#     /*
+#         1) -- ●, ○            ==      2개
+#         2) -- A, B, C         ==      3개
+#         3) -- ㄱ, ㄴ           ==      2개
+# 
+#         있다고 할 떄
+#         최소 하나 라도 쓰고 있는 모든 경우의 수는?
+# 
+#         result = (2 + 1) * ( 3 + 1 ) * (2 + 1) - 1;
+#      */
+# 
 # 
 #     public static void main(String[] args) {
-#         System.out.println(solution(2, 10, new int[]{7, 6, 5, 4}));
+#         System.out.println(solution(new String[][]{{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}}));
 #     }
 # 
-#     public static int solution(int bridgeLength, int weight, int[] truckWeights) {
+#     public static int solution(String[][] clothes) {
 # 
-#         int nowTime = 0;    //  현재시각
-#         int totalWeight = 0;    //  다리위의 무게
+#         Map<String, Integer> map = new HashMap<>();
 # 
-#         Queue<Truck> waitQ = new LinkedList<>();
-#         Queue<Truck> moveQ = new LinkedList<>();
+#         // 맵에 키값이 중복 불가 이므로 중복 생각은 안해도 된다.
+#         for(int i = 0 ; i < clothes.length; i++){
 # 
-#         for (int i : truckWeights) {
-#             Truck t = new Truck(i);
-#             waitQ.offer(t);
+#             String tempKey = clothes[i][1];
+#             if(map.get(tempKey) == null) {
+#                 map.put(tempKey, 1);
+#             }else{
+#                 // ✨✨ 완주하지 못한 선수들에서 썼던 로직인데 이제 좀 기억해라
+#                 int value = map.get(tempKey) + 1;
+#                 map.put(tempKey, value);
+#             }
 #         }
 # 
-#         while (!waitQ.isEmpty() || !moveQ.isEmpty()) {
+#         int[] temp = new int[map.size()];
+#         int index = 0;
 # 
-#             nowTime++;
+#         Set set = map.entrySet();
+#         Iterator it = set.iterator();
 # 
-#             // [1 - 다리위에 지나가는 트럭이 없을 경우]
-#             // 1) 다라위의 총무게에 기다리는 다음 트럭 객체의 무게를 더하고
-#             // 2) 다리위를 지나는 트럭 큐에 삽입한다.
-#             if (moveQ.isEmpty()) {
-#                 Truck t = waitQ.poll();
-#                 totalWeight += t.weight;
-#                 moveQ.offer(t);
-#                 continue;
-#             }
+#         while(it.hasNext()){
+#             Map.Entry e = (Map.Entry) it.next();
 # 
-#             // [2 - 다리위에 지나가는 트럭이 있는 경우]
-# 
-# 
-#             // 1) 다리위를 지나는 트럭의 모든 객체들의 move 속성을 1씩 증가시킨다.
-#             for(Truck t : moveQ){
-#                 t.moving();
-#             }
-# 
-#             // 조건 2) 다리위를 지나는 트럭 이동반경이 다리길이보다 길다면?
-#             // ㄴ 움직이고 있는 트럭의 무게를 다리위 총무게에 뺀다. + moveQ에서도 빼낸다.
-#             if(moveQ.peek().move > bridgeLength){
-#                 Truck t = moveQ.poll();
-#                 totalWeight -= t.weight;
-#             }
-# 
-# 
-#             // 조건 3) 기다리는 트럭이 있고 && 다리위 총 무게 + 다음 트럭의 무게 <= 다리가 버틸 수 있는 무게
-#             // ㄴ 대기하고 있는 다음 트럭의 무게를 다리위 총 무게에 더하고 다리위를 지나는 큐에 삽입.
-# 
-#             if(!waitQ.isEmpty() && (totalWeight + waitQ.peek().weight <= weight)){
-# 
-#                 Truck t = waitQ.poll();
-#                 totalWeight += t.weight;
-#                 moveQ.offer(t);
-#             }
-# 
+#             temp[index++] = (Integer) e.getValue() + 1;
 #         }
 # 
-#         return nowTime;
+#         int result = 1;
+#         for(int i : temp){
+#             result *= i;
+#         }
 # 
+#         return result -1;
 #     }
-# 
-# }
-# 
-# class Truck {
-#     int weight;
-#     int move;
-# 
-#     Truck(int weight) {
-#         this.weight = weight;
-#         this.move = 1;
-#     }
-# 
-#     void moving() {
-#         this.move++;
-#     }
-# 
 # }
 ```
