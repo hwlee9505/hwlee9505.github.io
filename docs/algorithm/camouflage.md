@@ -90,7 +90,7 @@ face에 해당하는 의상이 crow_mask, blue_sunglasses, smoky_makeup이므로
 #             if(map.get(tempKey) == null) {
 #                 map.put(tempKey, 1);
 #             }else{
-#                 // ✨✨ 완주하지 못한 선수들에서 썼던 로직인데 이제 좀 기억해라
+#                 // 완주하지 못한 선수들에서 썼던 로직인데 이제 좀 기억해라
 #                 int value = map.get(tempKey) + 1;
 #                 map.put(tempKey, value);
 #             }
