@@ -8,6 +8,9 @@ nav_order: 2
 # 2주차 (자료구조 & 알고리즘) 
 {: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
 ---
 
 ![](/assets/images/cs/week2.jpeg)
