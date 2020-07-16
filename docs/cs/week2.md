@@ -14,9 +14,8 @@ nav_order: 2
 1. TOC
 {:toc}
 ---
-
 ![](/assets/images/cs/week2.jpeg)
-
+---
 # 지현님 -> 나
 {: .label .label-red }
 
@@ -152,3 +151,43 @@ FIFO가 아니라 데이터를 근거로 우선순위를 판단, 우선순위가
 ![](/assets/images/cs/week2_3.png)
 
 [출처](http://contents.kocw.or.kr/KOCW/document/2012/kumoh/kimyeonghak/17.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+---
+
+# 병준님 -> 성용이
+{: .label .label-yellow }
+
+## Queue와 Stack에 대해 설명해주세요.
+
+Queue : 먼저 집어넣은 데이터가 먼저 나오는 (FIFO - First In First Out)구조로 저장하는 형식을 말한다.  
+Stack : 한 쪽 끝에서만 자료를 넣거나 뺄 수 있는 선형 구조(LIFO - Last In First Out)를 말한다.  
+
+### (꼬리 질문) 어떤 경우에 탐색 시간 복잡도가 최대가 되고, 얼마인가요?
+
+## java의 collections에서 제공되는 인터페이스나 클래스를 설명해주세요.
+
+![](/assets/images/cs/week2_2.png)
+크게 Collection과 Map interface가 존재한다.  
+[관련 링크](https://www.geeksforgeeks.org/collections-in-java-2/){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+## 1TB의 정렬되지 않은 데이터가 있습니다. RAM이 32GB인 컴퓨터에서 이 데이터를 정렬해야 할 때 어떻게 할 수 있을까요?
+외부 합병 정렬 방법을 이용한다.  
+1. 16GB씩 정렬하여 정렬된 데이터를 디스크에 쓴다.  
+2. 1TB / 16GB = 64개의 파일이 생긴다.  
+3. 64개의 파일을 처음부터 100MB씩 메모리(입력버퍼)에 로딩한다. 100MB의 출력을 위한 버퍼도 만든다.  
+4. 64-way merge를 수행한다.  
+
+[관련 링크](https://ko.wikipedia.org/wiki/%ED%95%A9%EB%B3%91_%EC%A0%95%EB%A0%AC){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+## 동적 계획법(dynamic programming)에 대해 설명해주세요.
+
+어떤 문제를 풀기 위해 그 문제를 더 작은 문제의 연장선으로 생각하고, 과거에 구한 해를 활용하는 방식
+
+[관련 링크1](https://namu.wiki/w/%EB%8F%99%EC%A0%81%20%EA%B3%84%ED%9A%8D%EB%B2%95){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[관련 링크2](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Algorithm){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+
+## [추가질문] hash를 활용해서 3,5,7을 어떻게 구분할래?
+```scss
+저는 일단 해쉬 충돌이 나지 않게 개방 주소형을 사용할 수 있게.. 테이블을 만들기 위해서 테이블의 크기를 6으로 해놓고 각 숫자에 6으로 나눈 뒤 나머지 값을 인덱스로 놔둘 것 같습니다.
+```
