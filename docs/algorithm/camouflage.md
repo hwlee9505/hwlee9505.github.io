@@ -1,126 +1,130 @@
 ---
 layout: default
-title: 위장 level2
+title: 왜 안되 갑자기 
 parent: Algorithm
 nav_order: 21
 ---
 
-# 위장 (해시)
+# ㅂㄷㄱㅂㅈㄷㄱㅂㅈㄷㄱㅂㅈㄷㄱㅇㄴㄹㅁㄴㅇ
+{: .no_toc }
 
 ---
 
 ## 문제 설명
 
-스파이들은 매일 다른 옷을 조합하여 입어 자신을 위장합니다.  
+ㄴㅁㅇㄹㄴㅇㄹㄴㅇㄹ 
 
-예를 들어 스파이가 가진 옷이 아래와 같고 오늘 스파이가 동그란 안경, 긴 코트, 파란색 티셔츠를 입었다면 다음날은 청바지를 추가로 입거나 동그란 안경 대신 검정 선글라스를 착용하거나 해야 합니다.  
+따라서, 모든 트럭이 다리를 지나려면 최소 8초가 걸립니다.  
+solution 함수의 매개변수로 다리 길이 bridge_length, 다리가 견딜 수 있는 무게 weight, 트럭별 무게 truck_weights가 주어집니다.   
+이때 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 return 하도록 solution 함수를 완성하세요.
 
-| 종류 | 이름                   |
-|:----|:----------------------|
-| 얼굴 | 동그란 안경, 검정 선글라스   |
-| 상의 | 파란색 티셔츠             |
-| 하의 | 청바지                  |
-| 겉옷 | 긴 코트                 |
+## 제한 조건
 
-스파이가 가진 의상들이 담긴 2차원 배열 clothes가 주어질 때 서로 다른 옷의 조합의 수를 return 하도록 solution 함수를 작성해주세요.  
+- bridge_length는 1 이상 10,000 이하입니다.
+- weight는 1 이상 10,000 이하입니다.
+- truck_weights의 길이는 1 이상 10,000 이하입니다.
+- 모든 트럭의 무게는 1 이상 weight 이하입니다.
 
-## 제한 사항
-
-* clothes의 각 행은 [의상의 이름, 의상의 종류]로 이루어져 있습니다.
-* 스파이가 가진 의상의 수는 1개 이상 30개 이하입니다.
-* 같은 이름을 가진 의상은 존재하지 않습니다.
-* clothes의 모든 원소는 문자열로 이루어져 있습니다.
-* 모든 문자열의 길이는 1 이상 20 이하인 자연수이고 알파벳 소문자 또는 '_' 로만 이루어져 있습니다.
-* 스파이는 하루에 최소 한 개의 의상은 입습니다.
 
 ## 입출력 예
 
-| clothes                                                                                          | return     |
-|:-------------------------------------------------------------------------------------------------|:-----------|
-| {"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}	       | 5          |
-| {"crow_mask", "face"}, {"blue_sunglasses", "face"}, {"smoky_makeup", "face"}                     | 3          |
+| bridge_length| weight            | truck_weights                    | return     | 
+|:-------------|:------------------|:---------------------------------|:-----------|
+| 2            | 10                | [7,4,5,6]                        | 8          |
+| 100          | 100               | [10]                             | 101        |
+| 100          | 100               | [10,10,10,10,10,10,10,10,10,10,] | 110        |
 
-## 입출력 예 설명
+## 해결 전략
 
-### 예제 #1
+![](/assets/images/algorithm/bridgeTruck.JPG)
+                                                   
 
-headgear에 해당하는 의상이 yellow_hat, green_turban이고 eyewear에 해당하는 의상이 blue_sunglasses이므로 아래와 같이 5개의 조합이 가능합니다.  
-```markdown
-1. yellow_hat  
-2. blue_sunglasses  
-3. green_turban  
-4. yellow_hat + blue_sunglasses  
-5. green_turban + blue_sunglasses  
-```
-
-### 예제 #2
-
-face에 해당하는 의상이 crow_mask, blue_sunglasses, smoky_makeup이므로 아래와 같이 3개의 조합이 가능합니다.  
-```markdown
-1. crow_mask
-2. blue_sunglasses
-3. smoky_makeup
-```
 ## 해결 코드
 ```yaml
-# import java.util.HashMap;
-# import java.util.Iterator;
-# import java.util.Map;
-# import java.util.Set;
+# package bridgeTruck;
 # 
-# public class Main {
+# import java.util.LinkedList;
+# import java.util.Queue;
 # 
-#     /*
-#         1) -- ●, ○            ==      2개
-#         2) -- A, B, C         ==      3개
-#         3) -- ㄱ, ㄴ           ==      2개
-# 
-#         있다고 할 떄
-#         최소 하나 라도 쓰고 있는 모든 경우의 수는?
-# 
-#         result = (2 + 1) * ( 3 + 1 ) * (2 + 1) - 1;
-#      */
-# 
+# public class MoreBridgeTruck {
 # 
 #     public static void main(String[] args) {
-#         System.out.println(solution(new String[][]{{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}}));
+#         System.out.println(solution(2, 10, new int[]{7, 6, 5, 4}));
 #     }
 # 
-#     public static int solution(String[][] clothes) {
+#     public static int solution(int bridgeLength, int weight, int[] truckWeights) {
 # 
-#         Map<String, Integer> map = new HashMap<>();
+#         int nowTime = 0;    //  현재시각
+#         int totalWeight = 0;    //  다리위의 무게
 # 
-#         // 맵에 키값이 중복 불가 이므로 중복 생각은 안해도 된다.
-#         for(int i = 0 ; i < clothes.length; i++){
+#         Queue<Truck> waitQ = new LinkedList<>();
+#         Queue<Truck> moveQ = new LinkedList<>();
 # 
-#             String tempKey = clothes[i][1];
-#             if(map.get(tempKey) == null) {
-#                 map.put(tempKey, 1);
-#             }else{
-#                 // ✨✨ 완주하지 못한 선수들에서 썼던 로직인데 이제 좀 기억해라
-#                 int value = map.get(tempKey) + 1;
-#                 map.put(tempKey, value);
+#         for (int i : truckWeights) {
+#             Truck t = new Truck(i);
+#             waitQ.offer(t);
+#         }
+# 
+#         while (!waitQ.isEmpty() || !moveQ.isEmpty()) {
+# 
+#             nowTime++;
+# 
+#             // [1 - 다리위에 지나가는 트럭이 없을 경우]
+#             // 1) 다라위의 총무게에 기다리는 다음 트럭 객체의 무게를 더하고
+#             // 2) 다리위를 지나는 트럭 큐에 삽입한다.
+#             if (moveQ.isEmpty()) {
+#                 Truck t = waitQ.poll();
+#                 totalWeight += t.weight;
+#                 moveQ.offer(t);
+#                 continue;
 #             }
+# 
+#             // [2 - 다리위에 지나가는 트럭이 있는 경우]
+# 
+# 
+#             // 1) 다리위를 지나는 트럭의 모든 객체들의 move 속성을 1씩 증가시킨다.
+#             for(Truck t : moveQ){
+#                 t.moving();
+#             }
+# 
+#             // 조건 2) 다리위를 지나는 트럭 이동반경이 다리길이보다 길다면?
+#             // ㄴ 움직이고 있는 트럭의 무게를 다리위 총무게에 뺀다. + moveQ에서도 빼낸다.
+#             if(moveQ.peek().move > bridgeLength){
+#                 Truck t = moveQ.poll();
+#                 totalWeight -= t.weight;
+#             }
+# 
+# 
+#             // 조건 3) 기다리는 트럭이 있고 && 다리위 총 무게 + 다음 트럭의 무게 <= 다리가 버틸 수 있는 무게
+#             // ㄴ 대기하고 있는 다음 트럭의 무게를 다리위 총 무게에 더하고 다리위를 지나는 큐에 삽입.
+# 
+#             if(!waitQ.isEmpty() && (totalWeight + waitQ.peek().weight <= weight)){
+# 
+#                 Truck t = waitQ.poll();
+#                 totalWeight += t.weight;
+#                 moveQ.offer(t);
+#             }
+# 
 #         }
 # 
-#         int[] temp = new int[map.size()];
-#         int index = 0;
+#         return nowTime;
 # 
-#         Set set = map.entrySet();
-#         Iterator it = set.iterator();
-# 
-#         while(it.hasNext()){
-#             Map.Entry e = (Map.Entry) it.next();
-# 
-#             temp[index++] = (Integer) e.getValue() + 1;
-#         }
-# 
-#         int result = 1;
-#         for(int i : temp){
-#             result *= i;
-#         }
-# 
-#         return result -1;
 #     }
+# 
+# }
+# 
+# class Truck {
+#     int weight;
+#     int move;
+# 
+#     Truck(int weight) {
+#         this.weight = weight;
+#         this.move = 1;
+#     }
+# 
+#     void moving() {
+#         this.move++;
+#     }
+# 
 # }
 ```
