@@ -18,7 +18,7 @@ Welcome!
 
 ## 자기소개
 
-![](/assets/images/siru.jpg)
+![](/assets/images/siru.jpeg)
 
 ### Dependencies
 
