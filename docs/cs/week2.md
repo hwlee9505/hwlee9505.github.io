@@ -16,6 +16,7 @@ nav_order: 2
 ![](/assets/images/cs/week2.jpeg)
 
 # 지현님 -> 나
+{: .label .label-red }
 
 ## JAVA의 Collection클래스의 대표 인터페이스를 설명하시오
 
