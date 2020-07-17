@@ -38,7 +38,7 @@ hashmap, treemap, hashtable가 하위 클래스로 존재합니다.
 
 ---
 
-### (꼬리 질문) hashset과 treeset의 차이점은 무엇인가요? hashset과 treeset의 차이점은 무엇인가요?
+### (꼬리 질문) hashset과 treeset의 차이점은 무엇인가요?
 
 hashset은 내부적으로 해싱을 이용해서 구현한 컬렉션이다.  
 Hashset은 저장 순서를 유지하지 않으므로 저장 순서를 유지하려면 LinkedHashSet을 이용해야 한다.  
