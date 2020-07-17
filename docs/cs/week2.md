@@ -173,7 +173,8 @@ Stack : 한 쪽 끝에서만 자료를 넣거나 뺄 수 있는 선형 구조(LI
 3. 64개의 파일을 처음부터 100MB씩 메모리(입력버퍼)에 로딩한다. 100MB의 출력을 위한 버퍼도 만든다.  
 4. 64-way merge를 수행한다.  
 
-[관련 링크](https://ko.wikipedia.org/wiki/%ED%95%A9%EB%B3%91_%EC%A0%95%EB%A0%AC){: .btn .fs-5 .mb-4 .mb-md-0 }
+[관련 링크1](https://www.geeksforgeeks.org/external-sorting/){: .btn .fs-5 .mb-4 .mb-md-0 }
+[관련 링크2](https://ko.wikipedia.org/wiki/%ED%95%A9%EB%B3%91_%EC%A0%95%EB%A0%AC){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
