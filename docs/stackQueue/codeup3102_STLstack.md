@@ -8,6 +8,12 @@ nav_order: 1
 # 기본 자료구조 문제
 {: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
 ---
 
 ## 문제 설명
