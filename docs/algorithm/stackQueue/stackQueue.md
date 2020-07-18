@@ -3,7 +3,7 @@ layout: default
 title: Algorithm
 nav_order: 0
 has_children: true
-permalink: /docs/algorithm/stackQueue
+permalink: /docs/algorithm/
 ---
 
 
