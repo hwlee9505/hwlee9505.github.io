@@ -1,12 +1,18 @@
 ---
 layout: default
-title: CodeUp 4624
-parent: Algorithm
-nav_order: 12
+title: CodeUp 4624 x
+parent: Algorithm 스택/큐
+nav_order: 4
 ---
 
-# CodeUp 4624 괄호의 값 (자료구조 Stack)
+# Stack 문제
 {: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ---
 
@@ -46,147 +52,147 @@ nav_order: 12
 
 ## 해결 코드 X (처음에 생각했던 코드)
 
-아직 알고리즘 초보이다 보니
+아직 알고리즘 초보이다 보니  
 1. 처음에 괄호들을 중위표기법으로 표현한 후
 2. 중위표기 -> 후위표기법 으로 변환한 뒤
-3. 후위표기법을 이용하여 계산하려 했으나 
-시간을 허투루 소비하는 것 같아 다른 소스를 보았는데 역시나 내 접근방법 자체가 별로였던 같다.
+3. 후위표기법을 이용하여 계산하려 했으나  
+시간을 허투루 소비하는 것 같아 다른 소스를 보았는데 역시나 내 접근방법 자체가 별로였던 같다.  
 아직도 요령이 부족한듯 하다;;
 
 
-```yaml
-# import java.io.BufferedReader;
-# import java.io.InputStreamReader;
-# import java.io.IOException;
-# import java.util.Stack;
-# 
-# public class Main {
-# 
-#     static Stack<Character> charStack = new Stack<>();
-#     static StringBuffer paren = new StringBuffer();
-# 
-#     public static void main(String[] args) throws IOException {
-# 
-#         Stack<Integer> stack = new Stack();
-#         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-#         String str = br.readLine();
-# 
-#         for (int i = 0; i < str.length(); i++) {
-# 
-#             char temp = str.charAt(i);
-# 
-#             if (temp == '(' || temp == '[') {
-#                 stack.push(i);
-#             } else {
-#                 // +인 경우에
-#                 if (stack.peek() == (i - 1)) {
-#                     if (temp == ')') {
-#                         stack.pop();
-#                         paren.append('+');
-#                         paren.append('2');
-# 
-#                     } else if (temp == ']') {
-#                         stack.pop();
-#                         paren.append('+');
-#                         paren.append('3');
-#                     }
-#                 }
-#                 // *인 경우에
-#                 else {
-#                     if (temp == ')') {
-#                         stack.pop();
-#                         paren.append('*');
-#                         paren.append('2');
-#                     } else if (temp == ']') {
-#                         stack.pop();
-#                         paren.append('*');
-#                         paren.append('3');
-#                     }
-#                 }
-#             }
-#         }
-# 
-#         System.out.println("중위순회 = " + paren);
-# 
-#         //////////////////////////////////////////////////////////
-#         //      2.    먼저 중위 표기법 -> 후위 표기법으로 고치기          //
-#         /////////////////////////////////////////////////////////
-# 
-#         char[] inputs = paren.toString().substring(1, paren.length()).toCharArray();
-# 
-# 
-#         paren.setLength(0); //  paren 초기화 , for 재사용을 위해서
-# 
-#         // stack도 재사용하려 했지만 제너릭스가 달라 새로 static 스택을 만듬
-# 
-#         for (char c : inputs) {
-# 
-#             switch (c) {
-# 
-#                 case '+':
-#                     gotOper(c, 1);
-#                     break;
-#                 case '*':
-#                     gotOper(c, 2);
-#                     break;
-#                 default:
-#                     paren.append(c);
-#                     break;
-#             }
-#         }
-#         while (!charStack.isEmpty()) {
-#             char temp = charStack.pop();
-#             paren.append(temp);
-#         }
-#         System.out.println("중위 -> 후위 = " + paren);
-# 
-#         //////////////////////////////////////////////////////////
-#         //      3.LAST       후위 순회를 이용해서 수식 계산하기          //
-#         /////////////////////////////////////////////////////////
-# 
-#         for (int i = 0; i < paren.length(); i++) {
-# 
-#             char temp = paren.toString().charAt(i);
-# 
-#             if (temp != '+' && temp != '*') {
-#                 stack.push(temp - '0');           // 처음에 썻던 스택을 재사용!
-#                 continue;
-#             }
-# 
-#             int second = stack.pop();
-#             int first = stack.pop();
-# 
-#             if (temp == '+') {
-#                 stack.push(first + second);
-#             } else if (temp == '*') {
-#                 stack.push(first * second);
-#             }
-#         }
-# 
-#         System.out.println("result = " + stack.pop());
-# 
-#     }
-# 
-#     private static void gotOper(char opThis, int prec1) {
-# 
-#         while (!charStack.isEmpty()) {
-#             char onTop = charStack.pop();
-#             int prec2;
-#             if (onTop == '+') {
-#                 prec2 = 1;
-#             } else {
-#                 prec2 = 2;
-#             }
-#             if (prec2 < prec1) {
-#                 charStack.push(onTop);
-#                 break;
-#             } else {
-#                 paren.append(onTop);
-#             }
-#         }
-#         charStack.push(opThis);
-#     }
-# }
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.Stack;
+
+public class Main {
+
+    static Stack<Character> charStack = new Stack<>();
+    static StringBuffer paren = new StringBuffer();
+
+    public static void main(String[] args) throws IOException {
+
+        Stack<Integer> stack = new Stack();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char temp = str.charAt(i);
+
+            if (temp == '(' || temp == '[') {
+                stack.push(i);
+            } else {
+                // +인 경우에
+                if (stack.peek() == (i - 1)) {
+                    if (temp == ')') {
+                        stack.pop();
+                        paren.append('+');
+                        paren.append('2');
+
+                    } else if (temp == ']') {
+                        stack.pop();
+                        paren.append('+');
+                        paren.append('3');
+                    }
+                }
+                // *인 경우에
+                else {
+                    if (temp == ')') {
+                        stack.pop();
+                        paren.append('*');
+                        paren.append('2');
+                    } else if (temp == ']') {
+                        stack.pop();
+                        paren.append('*');
+                        paren.append('3');
+                    }
+                }
+            }
+        }
+
+        System.out.println("중위순회 = " + paren);
+
+        //////////////////////////////////////////////////////////
+        //      2.    먼저 중위 표기법 -> 후위 표기법으로 고치기          //
+        /////////////////////////////////////////////////////////
+
+        char[] inputs = paren.toString().substring(1, paren.length()).toCharArray();
+
+
+        paren.setLength(0); //  paren 초기화 , for 재사용을 위해서
+
+        // stack도 재사용하려 했지만 제너릭스가 달라 새로 static 스택을 만듬
+
+        for (char c : inputs) {
+
+            switch (c) {
+
+                case '+':
+                    gotOper(c, 1);
+                    break;
+                case '*':
+                    gotOper(c, 2);
+                    break;
+                default:
+                    paren.append(c);
+                    break;
+            }
+        }
+        while (!charStack.isEmpty()) {
+            char temp = charStack.pop();
+            paren.append(temp);
+        }
+        System.out.println("중위 -> 후위 = " + paren);
+
+        //////////////////////////////////////////////////////////
+        //      3.LAST       후위 순회를 이용해서 수식 계산하기          //
+        /////////////////////////////////////////////////////////
+
+        for (int i = 0; i < paren.length(); i++) {
+
+            char temp = paren.toString().charAt(i);
+
+            if (temp != '+' && temp != '*') {
+                stack.push(temp - '0');           // 처음에 썻던 스택을 재사용!
+                continue;
+            }
+
+            int second = stack.pop();
+            int first = stack.pop();
+
+            if (temp == '+') {
+                stack.push(first + second);
+            } else if (temp == '*') {
+                stack.push(first * second);
+            }
+        }
+
+        System.out.println("result = " + stack.pop());
+
+    }
+
+    private static void gotOper(char opThis, int prec1) {
+
+        while (!charStack.isEmpty()) {
+            char onTop = charStack.pop();
+            int prec2;
+            if (onTop == '+') {
+                prec2 = 1;
+            } else {
+                prec2 = 2;
+            }
+            if (prec2 < prec1) {
+                charStack.push(onTop);
+                break;
+            } else {
+                paren.append(onTop);
+            }
+        }
+        charStack.push(opThis);
+    }
+}
 ```
 
 ## 해결 코드2
