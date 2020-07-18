@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 쇠막대기 leve2
+title: 쇠막대기 level2
 parent: Algorithm 스택/큐
 nav_order: 8
 ---
