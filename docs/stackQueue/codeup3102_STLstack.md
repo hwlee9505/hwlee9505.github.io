@@ -61,43 +61,43 @@ size()
 2
 
 ## 해결 코드1
-```yaml
-# import java.io.BufferedReader;
-# import java.io.InputStreamReader;
-# import java.io.IOException;
-# import java.util.Stack;
-# 
-# public class Main{
-# 
-#     public static void main (String[] args) throws IOException{
-# 
-#         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-#         Stack<String> stack = new Stack();
-# 
-#         int size = Integer.parseInt(br.readLine());
-#         String[] strArr = new String[size];
-# 
-#         // 먼저 br.readLine()은 따로 받아놓고 하기
-#         for(int i =0; i< size; i++){
-#             strArr[i] = br.readLine();
-#         }
-# 
-#         for(String command : strArr){
-#             if(command.contains("push")) {
-#                 String[] nums = command.split(" +");
-#                 stack.push(nums[1]);
-#             }else if(!stack.isEmpty() && command.equals("top()")) {
-#                 System.out.println(stack.peek());
-#             }else if(stack.isEmpty() && command.equals("top()")) {  // java api stack의 peek()는 비어있으면 -1을 반환하지 않고
-#                 System.out.println("-1");                           // Throws: EmptyStackException - if this stack is empty.
-#             }else if(!stack.isEmpty() && command.equals("pop()")){
-#                 stack.pop();
-#             }else if(command.equals("size()")){
-#                 System.out.println(stack.size());
-#             }else if(command.equals("empty()")){
-#                 System.out.println(stack.isEmpty());
-#             }
-#         }
-#     }
-# }
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.Stack;
+
+public class Main{
+
+    public static void main (String[] args) throws IOException{
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Stack<String> stack = new Stack();
+
+        int size = Integer.parseInt(br.readLine());
+        String[] strArr = new String[size];
+
+        // 먼저 br.readLine()은 따로 받아놓고 하기
+        for(int i =0; i< size; i++){
+            strArr[i] = br.readLine();
+        }
+
+        for(String command : strArr){
+            if(command.contains("push")) {
+                String[] nums = command.split(" +");
+                stack.push(nums[1]);
+            }else if(!stack.isEmpty() && command.equals("top()")) {
+                System.out.println(stack.peek());
+            }else if(stack.isEmpty() && command.equals("top()")) {  // java api stack의 peek()는 비어있으면 -1을 반환하지 않고
+                System.out.println("-1");                           // Throws: EmptyStackException - if this stack is empty.
+            }else if(!stack.isEmpty() && command.equals("pop()")){
+                stack.pop();
+            }else if(command.equals("size()")){
+                System.out.println(stack.size());
+            }else if(command.equals("empty()")){
+                System.out.println(stack.isEmpty());
+            }
+        }
+    }
+}
 ```
