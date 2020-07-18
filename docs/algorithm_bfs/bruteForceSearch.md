@@ -7,7 +7,7 @@ permalink: /docs/algorithm_bfs
 ---
 
 
-# 해시
+# 완전탐색
 
 완전탐색 알고리즘 문제 해결 전략  
 
