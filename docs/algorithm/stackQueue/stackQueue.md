@@ -1,9 +1,9 @@
 ---
 layout: default
 title: 스택과 큐
-nav_order: 0
+nav_order: 11
 has_children: true
-permalink: /docs/algorithm/
+permalink: /docs/algorithm
 ---
 
 
