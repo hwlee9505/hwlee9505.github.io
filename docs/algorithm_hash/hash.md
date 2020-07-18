@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Algorithm 해시
-nav_order: 1
+nav_order: 11
 has_children: true
 permalink: /docs/algorithm_hash
 ---
