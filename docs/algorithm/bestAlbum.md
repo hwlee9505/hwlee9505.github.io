@@ -45,7 +45,7 @@ pop 장르는 3,100회 재생되었으며, pop 노래는 다음과 같습니다.
 
 
 ## 해결 코드1 (다른 분꺼)
-```markdown
+```java
 import java.util.*;
 
 public class Main {
@@ -140,7 +140,7 @@ public class Main {
 ```
 
 ## 해결 코드2 (안되는 내꺼)
-```markdown
+```java
 import java.util.*;
 
 class NumberPlays {
