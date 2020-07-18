@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Algorithm
+title: 스택과 큐
 nav_order: 0
 has_children: true
 permalink: /docs/algorithm/
