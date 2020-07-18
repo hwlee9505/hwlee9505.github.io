@@ -1,12 +1,18 @@
 ---
 layout: default
 title: CodeUp 3127
-parent: Algorithm
-nav_order: 8
+parent: Algorithm 스택/큐
+nav_order: 2
 ---
 
-# CodeUp 3127 (자료구조 Stack 후위 표기식의 계산)
+# Stack 후위 표기식의 계산
 {: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ---
 
@@ -57,57 +63,57 @@ nav_order: 8
 = 1 + 2 * 3 + (4 - 5) * 6  
 = 1  
 
-## 해결 코드1
-```yaml
-# import java.io.BufferedReader;
-# import java.io.InputStreamReader;
-# import java.io.IOException;
-# import java.util.Stack;
-# import java.util.StringTokenizer;
-# 
-# public class Main {
-# 
-#     public static void main(String[] args) throws IOException {
-# 
-#         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-# 
-#         Stack<Integer> stack = new Stack<>();
-# 
-#         // StringTokenizer  
-#         // split 사용할 필요 없이 구분 짓기 위한 클래스
-#         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-# 
-#         // 후위 표기식 계산 알고리즘
-#         while (st.hasMoreTokens()) {
-# 
-#             String temp = st.nextToken();
-# 
-#             // 1) 항목이 피연산자 이면
-#             // push(item)
-#             if (!"+".equals(temp) && !"-".equals(temp) && !"*".equals(temp)) {
-#                 stack.push(Integer.parseInt(temp));
-#                 continue;
-#             }
-# 
-#             // 2) 항목이 연산자 이면
-#             // second = pop();
-#             // first = pop();
-#             // push(result);
-#             int second = stack.pop();
-#             int first = stack.pop();
-# 
-#             if ("+".equals(temp)) {
-#                 stack.push(first + second);
-#             } else if ("-".equals(temp)) {
-#                 stack.push(first - second);
-#             } else if ("*".equals(temp)) {
-#                 stack.push(first * second);
-#             }
-#         }
-# 
-#         // 3) 마지막으로
-#         // final_result = pop(s);
-#         System.out.println(stack.pop());
-#     }
-# }
+## 해결 코드
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.Stack;
+import java.util.StringTokenizer;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        Stack<Integer> stack = new Stack<>();
+
+        // StringTokenizer  
+        // split 사용할 필요 없이 구분 짓기 위한 클래스
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+        // 후위 표기식 계산 알고리즘
+        while (st.hasMoreTokens()) {
+
+            String temp = st.nextToken();
+
+            // 1) 항목이 피연산자 이면
+            // push(item)
+            if (!"+".equals(temp) && !"-".equals(temp) && !"*".equals(temp)) {
+                stack.push(Integer.parseInt(temp));
+                continue;
+            }
+
+            // 2) 항목이 연산자 이면
+            // second = pop();
+            // first = pop();
+            // push(result);
+            int second = stack.pop();
+            int first = stack.pop();
+
+            if ("+".equals(temp)) {
+                stack.push(first + second);
+            } else if ("-".equals(temp)) {
+                stack.push(first - second);
+            } else if ("*".equals(temp)) {
+                stack.push(first * second);
+            }
+        }
+
+        // 3) 마지막으로
+        // final_result = pop(s);
+        System.out.println(stack.pop());
+    }
+}
 ```
