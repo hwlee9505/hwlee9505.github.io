@@ -93,7 +93,6 @@ public class Main {
             }
         }
 
-        int mCnt = 0;
         Iterator it = sortByValue(playMap).iterator();
 
         while (it.hasNext()) {
@@ -104,7 +103,6 @@ public class Main {
 
             while (indexIt.hasNext()) {
                 resultAl.add((int) indexIt.next());
-//                mCnt ++;
                 playsCnt++;
                 if (playsCnt > 1) break; //  노래를 두 개씩 모아야 하기 때문이다.
             }
