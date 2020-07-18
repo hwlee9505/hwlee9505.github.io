@@ -1,12 +1,19 @@
 ---
 layout: default
 title: 완주하지 못한 선수 level1
-parent: Algorithm
-nav_order: 5
+parent: Algorithm 해시
+nav_order: 0
 ---
 
 # 완주하지 못한 선수 (해시)
 {: .no_toc }
+
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ---
 
@@ -45,60 +52,60 @@ nav_order: 5
 "mislav"는 참여자 명단에는 두 명이 있지만, 완주자 명단에는 한 명밖에 없기 때문에 한명은 완주하지 못했습니다.
 
 ## 해결 코드1
-```yaml
-# import java.util.HashMap;
-# import java.util.Map;
-# class Solution {
-#     public String solution(String[] participant, String[] completion) {
-#              
-#          String answer = "";
-#         int val = 0;
-# 
-#         Map<String, Integer> map = new HashMap<>();
-# 
-#         for(String part : participant){
-#             // 지정된 키(key)의 값(객체)을 반환, 못찾으면 null 반환
-#             if(map.get(part) == null){
-#                 map.put(part,1);
-#             }else{
-#                 // map의 value값을 +1로 만든다.
-#                 val = map.get(part)+1;
-#                 map.put(part,val);
-#             }
-#         }
-# 
-#         // 다시 선수들 중에 완주한 놈들의 value를 -1 해버리기
-#         for(String comp : completion){
-#             val = map.get(comp) -1;
-#             map.put(comp,val);
-#         }
-# 
-#         for(String key: map.keySet()){
-#             if(map.get(key) == 1){
-#                 answer = key;
-#             }
-#         }
-# 
-#         return answer;
-#     }
-# }
+```java
+import java.util.HashMap;
+import java.util.Map;
+class Solution {
+    public String solution(String[] participant, String[] completion) {
+             
+         String answer = "";
+        int val = 0;
+
+        Map<String, Integer> map = new HashMap<>();
+
+        for(String part : participant){
+            // 지정된 키(key)의 값(객체)을 반환, 못찾으면 null 반환
+            if(map.get(part) == null){
+                map.put(part,1);
+            }else{
+                // map의 value값을 +1로 만든다.
+                val = map.get(part)+1;
+                map.put(part,val);
+            }
+        }
+
+        // 다시 선수들 중에 완주한 놈들의 value를 -1 해버리기
+        for(String comp : completion){
+            val = map.get(comp) -1;
+            map.put(comp,val);
+        }
+
+        for(String key: map.keySet()){
+            if(map.get(key) == 1){
+                answer = key;
+            }
+        }
+
+        return answer;
+    }
+}
 ```
 
 ## 해결 코드2
-```yaml
-# import java.util.*;
-# class Solution {
-#     public String solution(String[] participant, String[] completion) {
-#         Arrays.sort(participant);
-#         Arrays.sort(completion);
-#         int i;
-#         for ( i=0; i<completion.length; i++){
-# 
-#             if (!participant[i].equals(completion[i])){
-#                 return participant[i];
-#             }
-#         }
-#         return participant[i];
-#     }
-# }
+```java
+import java.util.*;
+class Solution {
+    public String solution(String[] participant, String[] completion) {
+        Arrays.sort(participant);
+        Arrays.sort(completion);
+        int i;
+        for ( i=0; i<completion.length; i++){
+
+            if (!participant[i].equals(completion[i])){
+                return participant[i];
+            }
+        }
+        return participant[i];
+    }
+}
 ```
