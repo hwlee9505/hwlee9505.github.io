@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 가장 큰 수
+title: 가장 큰 수 level 2
 parent: Algorithm 정렬
 nav_order: 1
 ---
