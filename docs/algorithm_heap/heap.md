@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Algorithm 해시
+title: Algorithm 힙
 nav_order: 14
 has_children: true
 permalink: /docs/algorithm_heap
