@@ -2,11 +2,17 @@
 layout: default
 title: 다리위를 지나는 트럭 level2
 parent: Algorithm 스택/큐
-nav_order: 0
+nav_order: 5
 ---
 
 # 다리위를 지나는 트럭 (자료구조 Queue)
 {: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ---
 

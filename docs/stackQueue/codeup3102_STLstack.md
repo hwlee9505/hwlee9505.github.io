@@ -1,11 +1,11 @@
 ---
 layout: default
-title: CodeUp 3102
-parent: Algorithm
+title: CodeUp 3102 
+parent: Algorithm 스택/큐
 nav_order: 7
 ---
 
-# CodeUp 3102 (자료구조 Stack)
+# 기본 자료구조 문제
 {: .no_toc }
 
 ---
