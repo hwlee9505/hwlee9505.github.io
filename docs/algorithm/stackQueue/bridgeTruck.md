@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 다리위를 지나는 트럭 level2
-parent: Algorithm
+parent: stackQueue
 nav_order: 2
 ---
 
