@@ -1,13 +1,18 @@
 ---
 layout: default
 title: CodeUp 3129
-parent: Algorithm
-nav_order: 9
+parent: Algorithm 스택/큐
+nav_order: 3
 ---
 
-# CodeUp 3127 (자료구조 Stack 괄호 검사)
+# Stack 괄호 검사
 {: .no_toc }
-[동빈나_중위표기법을 후위표기법으로 변환하기](http://blog.naver.com/PostView.nhn?blogId=ndb796&logNo=220654116881&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 
 ## 문제 설명
@@ -39,46 +44,46 @@ bad
 stack을 이용하면 쉽게 판단할 수 있습니다.
 
 ## 해결 코드1
-```yaml
-# import java.io.BufferedReader;
-# import java.io.InputStreamReader;
-# import java.io.IOException;
-# import java.util.Stack;
-# 
-# public class Main {
-# 
-#     public static void main(String[] args) throws IOException {
-# 
-#         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-#         String str = br.readLine();
-# 
-#         Stack<Character> stack = new Stack();
-#         char[] gihos = str.toCharArray();
-# 
-#         System.out.println(Main.isRight(gihos, stack));
-# 
-#     }
-# 
-#     public static String isRight(char[] gihos, Stack<Character> stack) {
-# 
-#         for (char c : gihos) {
-# 
-#             if (c == '(') {
-#                 stack.push(c);
-#             } else {
-#                 if (!stack.isEmpty()) {
-#                     stack.pop();
-#                 } else {    // 처음부터 ')'가 들어오는 경우를 대비
-#                     return "bad";
-#                 }
-#             }
-#         }
-# 
-#         if (stack.isEmpty()) {
-#             return "good";
-#         } else {
-#             return "bad";
-#         }
-#     }
-# }
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.Stack;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+
+        Stack<Character> stack = new Stack();
+        char[] gihos = str.toCharArray();
+
+        System.out.println(Main.isRight(gihos, stack));
+
+    }
+
+    public static String isRight(char[] gihos, Stack<Character> stack) {
+
+        for (char c : gihos) {
+
+            if (c == '(') {
+                stack.push(c);
+            } else {
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                } else {    // 처음부터 ')'가 들어오는 경우를 대비
+                    return "bad";
+                }
+            }
+        }
+
+        if (stack.isEmpty()) {
+            return "good";
+        } else {
+            return "bad";
+        }
+    }
+}
 ```
