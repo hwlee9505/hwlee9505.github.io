@@ -9,5 +9,6 @@ permalink: /docs/algorithm_stackQueue
 
 # 스택과 큐
 
-스택과 큐 알고리즘 문제 해결 전략
+스택과 큐 알고리즘 문제 해결 전략  
 
+LIFO, FIFO, push & pop! 스택과 큐를 이용해서 문제를 풀어보세요.
