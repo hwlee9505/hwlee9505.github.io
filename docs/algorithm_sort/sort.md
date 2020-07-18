@@ -7,7 +7,7 @@ permalink: /docs/algorithm_sort
 ---
 
 
-# 해시
+# 정렬
 
 정렬 알고리즘 문제 해결 전략  
 
