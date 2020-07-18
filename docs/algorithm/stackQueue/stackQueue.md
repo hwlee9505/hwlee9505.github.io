@@ -3,6 +3,7 @@ layout: default
 title: 스택 큐
 nav_order: 1
 has_children: true
+has_parent: true
 permalink: /docs/algorithm/stackQueue
 ---
 
