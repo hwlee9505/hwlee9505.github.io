@@ -1,13 +1,18 @@
 ---
 layout: default
 title: 가장 큰 수
-parent: Algorithm
-nav_order: 17
+parent: Algorithm 정렬
+nav_order: 1
 ---
 
 # 가장 큰 수 (정렬)
 {: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ---
 
 ## 문제 설명
@@ -32,39 +37,39 @@ nav_order: 17
                                                    
 
 ## 해결 코드
-```yaml
-# import java.util.ArrayList;
-# import java.util.Collections;
-# import java.util.Comparator;
-# 
-# class Solution {
-# 
-#     public String solution(int[] numbers) {
-# 
-#         StringBuilder sb = new StringBuilder();
-#         ArrayList<String> list = new ArrayList<>();
-# 
-#         for (int i : numbers) {
-#             list.add(String.valueOf(i));
-#         }
-# 
-#         Collections.sort(list, comparator);
-# 
-#         for (String s : list) {
-#             sb.append(s);
-#         }
-#         
-#         if(sb.toString().startsWith("0")){
-#             return "0";
-#         }
-#         return sb.toString();
-#     }
-# 
-#     public Comparator<String> comparator = new Comparator<String>() {
-#         @Override
-#         public int compare(String o1, String o2) {
-#             return (o2 + o1).compareTo(o1 + o2);
-#         }
-#     };
-# }
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+class Solution {
+
+    public String solution(int[] numbers) {
+
+        StringBuilder sb = new StringBuilder();
+        ArrayList<String> list = new ArrayList<>();
+
+        for (int i : numbers) {
+            list.add(String.valueOf(i));
+        }
+
+        Collections.sort(list, comparator);
+
+        for (String s : list) {
+            sb.append(s);
+        }
+        
+        if(sb.toString().startsWith("0")){
+            return "0";
+        }
+        return sb.toString();
+    }
+
+    public Comparator<String> comparator = new Comparator<String>() {
+        @Override
+        public int compare(String o1, String o2) {
+            return (o2 + o1).compareTo(o1 + o2);
+        }
+    };
+}
 ```
