@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 프린터 level2 x
+title: 프린터 level2
 parent: Algorithm 스택/큐
 nav_order: 7
 ---
 
-# 프린터 (자료구조 Queue) X
+# 프린터 (자료구조 Queue)
 {: .no_toc }
 
 ## Table of contents
