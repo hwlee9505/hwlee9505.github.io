@@ -46,38 +46,49 @@ pop 장르는 3,100회 재생되었으며, pop 노래는 다음과 같습니다.
 
 ## 해결 코드1 (다른 분꺼)
 ```markdown
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Collections;
+import java.util.*;
 
-class Solution {
-    public int[] solution(String[] genres, int[] plays) {
-        HashMap<String, Object> genresMap = new HashMap<String, Object>();      //<장르, 곡 정보> 
-        HashMap<String, Integer> playMap = new HashMap<String, Integer>(); //<장르, 총 장르 재생수>
-        ArrayList<Integer> resultAL = new ArrayList<Integer>();
+public class Main {
 
-        for(int i = 0; i < genres.length; i++){
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(solution(new String[]{"classic", "pop", "classic", "classic", "pop"}, new int[]{500, 600, 150, 800, 2500})));
+    }
+
+    public static int[] solution(String[] genres, int[] plays) {
+
+
+        // 1. <장르, 🎶곡 정보?🎶>
+        HashMap<String, Object> genresMap = new HashMap<String, Object>();
+
+        // 2. <장르, 총 장르 재생 수>       // me,  1. <장르, 총 재생 횟 수>
+        HashMap<String, Integer> playMap = new HashMap<String, Integer>();
+
+        ArrayList<Integer> resultAl = new ArrayList<Integer>();
+
+        for (int i = 0; i < genres.length; i++) {
             String key = genres[i];
-            HashMap<Integer, Integer> infoMap;       // 곡 정보 : <곡 고유번호, 재생횟수>
+            HashMap<Integer, Integer> infoMap;      //  🎶곡 정보🎶 : <곡 고유번호, 재생 횟수>
 
-            if(genresMap.containsKey(key)){
-                 infoMap = (HashMap<Integer, Integer>)genresMap.get(key);
-            }
-            else {
+            // 1. <장르, <곡 고유번호, 재생 횟수>>
+            if (genresMap.containsKey(key)) {
+                // ✨✨ Object value안에 HashMap<>이 들어 갈 수 있다.
+                // 자바의 정석 2 (p.648)
+
+                // ✨✨ genresMap의 Value 형이 Object 이면
+                // Map자체가 형변환을 통해 또 다른 Map이 될 수 있다.
+                infoMap = (HashMap<Integer, Integer>) genresMap.get(key);
+            } else {
                 infoMap = new HashMap<Integer, Integer>();
             }
 
-            infoMap.put(i, plays[i]);
+            infoMap.put(i, plays[i]);       //  genresMap의 value 이자, 곡 정보 map
             genresMap.put(key, infoMap);
 
-            //재생수
-            if(playMap.containsKey(key)){
+
+            // 2. <장르, 총 장르 재생 수>
+            if (playMap.containsKey(key)) {
                 playMap.put(key, playMap.get(key) + plays[i]);
-            }
-            else {
+            } else {
                 playMap.put(key, plays[i]);
             }
         }
@@ -85,41 +96,46 @@ class Solution {
         int mCnt = 0;
         Iterator it = sortByValue(playMap).iterator();
 
-        while(it.hasNext()){
-            String key = (String)it.next();
-            Iterator indexIt = sortByValue((HashMap<Integer, Integer>)genresMap.get(key)).iterator();
+        while (it.hasNext()) {
+            String key = (String) it.next();
+            // indexIt는 ArrayList 를 사용하는 iterator 이다.
+            Iterator indexIt = sortByValue((HashMap<Integer, Integer>) genresMap.get(key)).iterator();
             int playsCnt = 0;
 
-            while(indexIt.hasNext()){
-                resultAL.add((int)indexIt.next());
-                mCnt++;
+            while (indexIt.hasNext()) {
+                resultAl.add((int) indexIt.next());
+//                mCnt ++;
                 playsCnt++;
-                if(playsCnt > 1) break;
+                if (playsCnt > 1) break; //  노래를 두 개씩 모아야 하기 때문이다.
             }
         }
 
-        int[] answer = new int[resultAL.size()];
+        int[] answer = new int[resultAl.size()];
 
-        for(int i = 0; i < resultAL.size(); i++){
-            answer[i] = resultAL.get(i).intValue();
+        int index = 0;
+        for (int i : resultAl) {
+            answer[index++] = i;
         }
 
         return answer;
     }
 
-    private ArrayList sortByValue(final Map map){
-        ArrayList<Object> keyList = new ArrayList();
+    // playsMap을 매개변수로 가져옴
+    // infosMap을 매개변수로 가져을 가져오기도 함
+    private static ArrayList sortByValue(final Map map) {
+        ArrayList<Object> keyList = new ArrayList<>();
         keyList.addAll(map.keySet());
 
-        Collections.sort(keyList, new Comparator(){
-            public int compare(Object o1, Object o2){
+        Collections.sort(keyList, new Comparator() {
+
+            @Override
+            public int compare(Object o1, Object o2) {
                 Object v1 = map.get(o1);
                 Object v2 = map.get(o2);
 
                 return ((Comparable) v2).compareTo(v1);
             }
         });
-
         return keyList;
     }
 }
