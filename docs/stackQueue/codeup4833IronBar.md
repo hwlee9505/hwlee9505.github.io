@@ -1,13 +1,18 @@
 ---
 layout: default
-title: CodeUp 4833
-parent: Algorithm
-nav_order: 10
+title: 쇠막대기 leve2
+parent: Algorithm 스택/큐
+nav_order: 8
 ---
 
-# CodeUp 4833 쇠막대기 (자료구조 Stack)
+# 쇠막대기 (Stack), CodeUp4833
 {: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ---
 
 ## 문제 설명
@@ -45,37 +50,37 @@ nav_order: 10
 17
 
 ## 해결 코드
-```yaml
-# import java.io.BufferedReader;
-# import java.io.InputStreamReader;
-# import java.io.IOException;
-# import java.util.Stack;
-# 
-# public class Main{
-# 
-#     public static void main (String[] args) throws IOException{
-# 
-#         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-#         String s = br.readLine();
-#         Stack<Integer> stack = new Stack<>();
-#         int count = 0;
-# 
-#         for(int i = 0 ; i < s.length(); i++){
-# 
-#             if(String.valueOf(s.charAt(i)).equals("(")){    // 1) "("이 들어온다면 == 쇠막대기 시작점
-#                 stack.push(i);                              // ㄴ index i를 push
-# 
-#             }else{                                          // 2) ")"이 들어온다면
-#                 if(stack.peek() == i-1){                    // 2-1)** 바로 전것이 전 인덱스인가?
-#                     stack.pop();                            // 레이저다 pop;
-#                     count += stack.size();                  // 현재 스택의 사이즈를 count에 더하기 (한줄 쭉 짤려나간거?)
-#                 }else{                                      // 2-2) 레이저가 아니다. == 쇠막대기 끝점
-#                     stack.pop();                            // stack pop;
-#                     count++;                                // count 터 1을 늘림 (어렵다)
-#                 }
-#             }
-#         }
-#         System.out.println(count);
-#     }
-# }
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.Stack;
+
+public class Main{
+
+    public static void main (String[] args) throws IOException{
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = br.readLine();
+        Stack<Integer> stack = new Stack<>();
+        int count = 0;
+
+        for(int i = 0 ; i < s.length(); i++){
+
+            if(String.valueOf(s.charAt(i)).equals("(")){    // 1) "("이 들어온다면 == 쇠막대기 시작점
+                stack.push(i);                              // ㄴ index i를 push
+
+            }else{                                          // 2) ")"이 들어온다면
+                if(stack.peek() == i-1){                    // 2-1)** 바로 전것이 전 인덱스인가?
+                    stack.pop();                            // 레이저다 pop;
+                    count += stack.size();                  // 현재 스택의 사이즈를 count에 더하기 (한줄 쭉 짤려나간거?)
+                }else{                                      // 2-2) 레이저가 아니다. == 쇠막대기 끝점
+                    stack.pop();                            // stack pop;
+                    count++;                                // count 터 1을 늘림 (어렵다)
+                }
+            }
+        }
+        System.out.println(count);
+    }
+}
 ```
