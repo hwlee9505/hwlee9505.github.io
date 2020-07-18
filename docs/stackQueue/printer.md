@@ -1,13 +1,18 @@
 ---
 layout: default
 title: 프린터 level2 x
-parent: Algorithm
-nav_order: 19
+parent: Algorithm 스택/큐
+nav_order: 7
 ---
 
 # 프린터 (자료구조 Queue) X
 {: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ---
 
 ## 문제 설명
@@ -48,7 +53,7 @@ nav_order: 19
 6개의 문서(A, B, C, D, E, F)가 인쇄 대기목록에 있고 중요도가 1 1 9 1 1 1 이므로 C D E F A B 순으로 인쇄합니다.  
 
 ## 해결 코드1
-```markdown
+```java
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -96,7 +101,7 @@ class Solution {
 }
 ```
 ## 해결 코드2
-```markdown
+```java
 import java.util.*;
 
 class Solution {
