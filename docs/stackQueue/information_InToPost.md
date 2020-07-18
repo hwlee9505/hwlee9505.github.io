@@ -5,7 +5,7 @@ parent: Algorithm 스택/큐
 nav_order: 0
 ---
 
-# Info 스택 중위표기법 -> 후위표기법
+# Stack 중위표기법 -> 후위표기법
 {: .no_toc }
 
 ---
@@ -18,7 +18,7 @@ nav_order: 0
 컴퓨터로는 후위 연산식을 사용할 때 연산자의 우선순위에 관계없이 순서대로 계산할 수 있기 때문에 더욱 편리할 수 있습니다.
 
 
-[w3big.com 자바 예 - 후위 표기로 중위 식을 변환하는 스택을 사용](http://www.w3big.com/ko/java/data-intopost.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[w3big.com 자바 예 - 후위 표기로 중위 식을 변환하는 스택을 사용](http://www.w3big.com/ko/java/data-intopost.html){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 
 ## 해결 코드
