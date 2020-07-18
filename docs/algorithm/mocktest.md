@@ -97,7 +97,7 @@ class Solution {
 ```
 
 ## 해결 코드2
-```yaml
+```markdown
 import java.util.ArrayList;
 class Solution {
    public int[] solution(int[] answer) {
