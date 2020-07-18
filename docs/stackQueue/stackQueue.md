@@ -1,9 +1,9 @@
 ---
 layout: default
-title: 스택과 큐
-nav_order: 11
+title: Algorithm_스택과 큐
+nav_order: 1
 has_children: true
-permalink: /docs/algorithm/stackQueue
+permalink: /docs/stackQueue
 ---
 
 
