@@ -56,91 +56,83 @@ solution 함수의 매개변수로 다리 길이 bridge_length, 다리가 견딜
                                                    
 
 ## 해결 코드
-```yaml
-# package bridgeTruck;
-# 
-# import java.util.LinkedList;
-# import java.util.Queue;
-# 
-# public class MoreBridgeTruck {
-# 
-#     public static void main(String[] args) {
-#         System.out.println(solution(2, 10, new int[]{7, 6, 5, 4}));
-#     }
-# 
-#     public static int solution(int bridgeLength, int weight, int[] truckWeights) {
-# 
-#         int nowTime = 0;    //  현재시각
-#         int totalWeight = 0;    //  다리위의 무게
-# 
-#         Queue<Truck> waitQ = new LinkedList<>();
-#         Queue<Truck> moveQ = new LinkedList<>();
-# 
-#         for (int i : truckWeights) {
-#             Truck t = new Truck(i);
-#             waitQ.offer(t);
-#         }
-# 
-#         while (!waitQ.isEmpty() || !moveQ.isEmpty()) {
-# 
-#             nowTime++;
-# 
-#             // [1 - 다리위에 지나가는 트럭이 없을 경우]
-#             // 1) 다라위의 총무게에 기다리는 다음 트럭 객체의 무게를 더하고
-#             // 2) 다리위를 지나는 트럭 큐에 삽입한다.
-#             if (moveQ.isEmpty()) {
-#                 Truck t = waitQ.poll();
-#                 totalWeight += t.weight;
-#                 moveQ.offer(t);
-#                 continue;
-#             }
-# 
-#             // [2 - 다리위에 지나가는 트럭이 있는 경우]
-# 
-# 
-#             // 1) 다리위를 지나는 트럭의 모든 객체들의 move 속성을 1씩 증가시킨다.
-#             for(Truck t : moveQ){
-#                 t.moving();
-#             }
-# 
-#             // 조건 2) 다리위를 지나는 트럭 이동반경이 다리길이보다 길다면?
-#             // ㄴ 움직이고 있는 트럭의 무게를 다리위 총무게에 뺀다. + moveQ에서도 빼낸다.
-#             if(moveQ.peek().move > bridgeLength){
-#                 Truck t = moveQ.poll();
-#                 totalWeight -= t.weight;
-#             }
-# 
-# 
-#             // 조건 3) 기다리는 트럭이 있고 && 다리위 총 무게 + 다음 트럭의 무게 <= 다리가 버틸 수 있는 무게
-#             // ㄴ 대기하고 있는 다음 트럭의 무게를 다리위 총 무게에 더하고 다리위를 지나는 큐에 삽입.
-# 
-#             if(!waitQ.isEmpty() && (totalWeight + waitQ.peek().weight <= weight)){
-# 
-#                 Truck t = waitQ.poll();
-#                 totalWeight += t.weight;
-#                 moveQ.offer(t);
-#             }
-# 
-#         }
-# 
-#         return nowTime;
-# 
-#     }
-# 
-# }
-# 
-# class Truck {
-#     int weight;
-#     int move;
-# 
-#     Truck(int weight) {
-#         this.weight = weight;
-#         this.move = 1;
-#     }
-# 
-#     void moving() {
-#         this.move++;
-#     }
-# 
-# }
+```java
+package bridgeTruck;
+ 
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class MoreBridgeTruck {
+
+    public static void main(String[] args) {
+        System.out.println(solution(2, 10, new int[]{7, 6, 5, 4}));
+    }
+
+    public static int solution(int bridgeLength, int weight, int[] truckWeights) {
+
+        int nowTime = 0;    //  현재시각
+        int totalWeight = 0;    //  다리위의 무게
+ 
+        Queue<Truck> waitQ = new LinkedList<>();
+        Queue<Truck> moveQ = new LinkedList<>();
+
+        for (int i : truckWeights) {
+            Truck t = new Truck(i);
+            waitQ.offer(t);
+        }
+
+        while (!waitQ.isEmpty() || !moveQ.isEmpty()) {
+
+            nowTime++;
+
+            // [1 - 다리위에 지나가는 트럭이 없을 경우]
+
+            // 1) 다라위의 총무게에 기다리는 다음 트럭 객체의 무게를 더하고
+            // 2) 다리위를 지나는 트럭 큐에 삽입한다.
+            if (moveQ.isEmpty()) {
+                Truck t = waitQ.poll();
+                totalWeight += t.weight;
+                moveQ.offer(t);
+                continue;
+            }
+
+            // [2 - 다리위에 지나가는 트럭이 있는 경우]
+
+            // 1) 다리위를 지나는 트럭의 모든 객체들의 move 속성을 1씩 증가시킨다.
+            for(Truck t : moveQ){
+                t.moving();
+            }
+
+            // 조건 2) 다리위를 지나는 트럭 이동반경이 다리길이보다 길다면?
+            // ㄴ 움직이고 있는 트럭의 무게를 다리위 총무게에 뺀다. + moveQ에서도 빼낸다.
+            if(moveQ.peek().move > bridgeLength){
+                Truck t = moveQ.poll();
+                totalWeight -= t.weight;
+            }
+
+            // 조건 3) 기다리는 트럭이 있고 && 다리위 총 무게 + 다음 트럭의 무게 <= 다리가 버틸 수 있는 무게
+            // ㄴ 대기하고 있는 다음 트럭의 무게를 다리위 총 무게에 더하고 다리위를 지나는 큐에 삽입.
+            if(!waitQ.isEmpty() && (totalWeight + waitQ.peek().weight <= weight)){
+
+                Truck t = waitQ.poll();
+                totalWeight += t.weight;
+                moveQ.offer(t);
+            }
+        }
+        return nowTime;
+    }
+}
+
+class Truck {
+    int weight;
+    int move;
+
+    Truck(int weight) {
+        this.weight = weight;
+        this.move = 1;
+    }
+    void moving() {
+        this.move++;
+    }
+}
 ```
