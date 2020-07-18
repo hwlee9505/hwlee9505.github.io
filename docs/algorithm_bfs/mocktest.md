@@ -1,13 +1,18 @@
 ---
 layout: default
 title: 모의고사 level1
-parent: Algorithm
-nav_order: 1
+parent: Algorithm 완전탐색
+nav_order: 0
 ---
 
 # 모의고사 (완전 탐색)
 {: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ---
 
 ## 문제 설명
@@ -52,7 +57,7 @@ nav_order: 1
 ![](/assets/images/algorithm/mockTest.jpg)
 
 ## 해결 코드1
-```markdown
+```java
 import java.util.ArrayList;
 class Solution {
    public int[] solution(int[] answer) {
@@ -97,7 +102,7 @@ class Solution {
 ```
 
 ## 해결 코드2
-```markdown
+```java
 import java.util.ArrayList;
 class Solution {
    public int[] solution(int[] answer) {
