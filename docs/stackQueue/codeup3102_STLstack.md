@@ -5,7 +5,7 @@ parent: Algorithm 스택/큐
 nav_order: 1
 ---
 
-# 기본 자료구조 문제
+# 기본 Stack 문제
 {: .no_toc }
 
 ## Table of contents
