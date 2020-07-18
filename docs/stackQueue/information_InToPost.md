@@ -8,6 +8,11 @@ nav_order: 0
 # Stack 중위표기법 -> 후위표기법
 {: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ---
 
 ## 설명
