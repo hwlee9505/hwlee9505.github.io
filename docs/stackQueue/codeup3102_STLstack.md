@@ -60,7 +60,7 @@ size()
 3
 2
 
-## 해결 코드1
+## 해결 코드
 ```java
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
