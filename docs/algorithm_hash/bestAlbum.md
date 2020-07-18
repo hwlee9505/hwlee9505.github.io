@@ -1,12 +1,17 @@
 ---
 layout: default
 title: 베스트앨범 level3 x
-parent: Algorithm
-nav_order: 22
+parent: Algorithm 해시
+nav_order: 3
 ---
 
 # 베스트앨범 (해시) X
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ---
 
 ## 문제 설명
@@ -139,7 +144,7 @@ public class Main {
 }
 ```
 
-## 해결 코드2 (안되는 내꺼)
+## 해결 코드2 (몇몇 테스트 케이스에서 안되는 내 코드)
 ```java
 import java.util.*;
 
@@ -257,6 +262,4 @@ public class Main {
         }
     };
 }
-
-//1 2 4 8 9 11 12 15
 ```
