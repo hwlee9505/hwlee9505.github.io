@@ -1,12 +1,18 @@
 ---
 layout: default
 title: 크레인 인형뽑기 게임 level 1
-parent: Algorithm
-nav_order: 4
+parent: Algorithm 스택/큐
+nav_order: 9
 ---
 
 # 크레인 인형뽑기 게임 (자료구조 Stack)
 {: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ---
 
@@ -65,117 +71,117 @@ nav_order: 4
 ![](/assets/images/algorithm/craneCrawlMachine4.jpg)
 
 ## 해결 코드1
-```yaml
-# import java.util.Stack;
-# 
-# class Solution {
-#     public int solution(int[][] board, int[] moves) {
-#         Stack<Integer> basket = new Stack<>();
-#         Stack<Integer>[] stacks = new Stack[board[0].length];
-# 
-#         for (int i = 0; i < board[0].length; i++) {
-#             stacks[i] = new Stack();
-#         }
-# 
-#         // for (int i = 0; i < board.length; i++) {
-#         //     for (int j = 0; j < board[0].length; j++) {
-#         //         System.out.print("[" + i + "," + j + "] - ");
-#         //         System.out.print(board[i][j] + "   ");
-#         //     }
-#         //     System.out.println();
-#         // }
-# 
-#         // 스택이기에 순서를 뒤집어 넣어준다.
-#         for (int i = board.length - 1; i >= 0; i--) {
-#             for (int j = 0; j < board[0].length; j++) {
-#                 if (board[i][j] != 0) {
-#                     stacks[j].push(board[i][j]);
-#                 }
-#             }
-#         }
-# 
-#         // popCount == 바구니에 담는 과정에서 터트려져 사라진 인형
-#         int popCount = 0;
-# 
-#         // 여기서 부터 Client가 인형뽑기 조정
-#         for (int i = 0; i < moves.length; i++) {
-# 
-#             // index == 크레인이 움직이는 인덱스 -1
-#             int index = moves[i] - 1;
-# 
-#             if (!stacks[index].isEmpty()) {     //   만약 인형이 없는 곳에서 크레인을 작동시키는 경우에는 아무런 일도 일어나지 않습니다.
-# 
-#                 // temp에 옮겨 놓은 거랑 basket 에 제일 위에 담기거 랑
-#                 // 1)같다면
-#                 //   basket pop 하고 basket에 temp를 push해줄 필요 없으며 popCount는 +2 해보리기
-# 
-#                 // 2)다르다면
-#                 //   그냥 temp를 basket에 push
-# 
-#                 // 1) 인형이 담긴 스택에 인형을 없애고 바구니에 담는 과정.
-#                 int temp = stacks[index].pop();
-# 
-# 
-#                 // 2) 바구니에서 터트리기. 바구니가 비지 않은 조건 이기도 하여 함.
-#                 if (!basket.isEmpty()) {
-#                     if (temp == basket.peek()) {
-#                         basket.pop();
-#                         popCount += 2;
-#                     } else {
-#                         basket.push(temp);
-#                     }
-#                 } else {
-#                     basket.push(temp);
-#                 }
-#             }
-#         }
-# 
-#         return popCount;
-#     }
-# }
+```java
+import java.util.Stack;
+
+class Solution {
+    public int solution(int[][] board, int[] moves) {
+        Stack<Integer> basket = new Stack<>();
+        Stack<Integer>[] stacks = new Stack[board[0].length];
+
+        for (int i = 0; i < board[0].length; i++) {
+            stacks[i] = new Stack();
+        }
+
+        // for (int i = 0; i < board.length; i++) {
+        //     for (int j = 0; j < board[0].length; j++) {
+        //         System.out.print("[" + i + "," + j + "] - ");
+        //         System.out.print(board[i][j] + "   ");
+        //     }
+        //     System.out.println();
+        // }
+
+        // 스택이기에 순서를 뒤집어 넣어준다.
+        for (int i = board.length - 1; i >= 0; i--) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j] != 0) {
+                    stacks[j].push(board[i][j]);
+                }
+            }
+        }
+
+        // popCount == 바구니에 담는 과정에서 터트려져 사라진 인형
+        int popCount = 0;
+
+        // 여기서 부터 Client가 인형뽑기 조정
+        for (int i = 0; i < moves.length; i++) {
+
+            // index == 크레인이 움직이는 인덱스 -1
+            int index = moves[i] - 1;
+
+            if (!stacks[index].isEmpty()) {     //   만약 인형이 없는 곳에서 크레인을 작동시키는 경우에는 아무런 일도 일어나지 않습니다.
+
+                // temp에 옮겨 놓은 거랑 basket 에 제일 위에 담기거 랑
+                // 1)같다면
+                //   basket pop 하고 basket에 temp를 push해줄 필요 없으며 popCount는 +2 해보리기
+
+                // 2)다르다면
+                //   그냥 temp를 basket에 push
+
+                // 1) 인형이 담긴 스택에 인형을 없애고 바구니에 담는 과정.
+                int temp = stacks[index].pop();
+
+
+                // 2) 바구니에서 터트리기. 바구니가 비지 않은 조건 이기도 하여 함.
+                if (!basket.isEmpty()) {
+                    if (temp == basket.peek()) {
+                        basket.pop();
+                        popCount += 2;
+                    } else {
+                        basket.push(temp);
+                    }
+                } else {
+                    basket.push(temp);
+                }
+            }
+        }
+
+        return popCount;
+    }
+}
 ```
 
 ## 해결 코드2
-```yaml
-# import java.util.Stack;
-# 
-# class Solution {
-# 	public static int solution(int[][] board, int[] moves) {
-# 		int answer = 0;
-# 		Stack<Integer> s = new Stack<Integer>();
-# 		for(int i=0; i<moves.length; i++) {
-# 			for(int j=0; j<board.length; j++) {
-# 				/* 
-# 				 * 해당 칸에 인형이 존재하는경우
-# 				 * ↓ 아래로 내려가므로 행의 값이 계속 바껴야함 (0,0), (1,0), (2,0) ...
-# 				 * moves배열에 있는 요소를 board[][] 배열의 '열' 값에 넣어서 비교
-# 				 * 배열의 인덱스는 0부터 시작하므로 -1
-# 				 */ 
-# 				if(board[j][moves[i]-1] != 0) {
-# 					
-# 					// 스택이 비어있는경우 -> 해당 인형 넣기
-# 					if(s.isEmpty())
-# 						s.push(board[j][moves[i]-1]);
-# 					
-# 					// 스택이 비어있지 않는경우 -> 인형이 동일한지 아닌지 비교
-# 					else {
-# 						// 인형이 동일하면 제거 후 사라진 인형개수 +2
-# 						if(s.peek() == board[j][moves[i]-1]) {
-# 							s.pop();
-# 							answer += 2;
-# 						}
-# 						// 인형이 동일하지 않으면 스택에 인형 넣기
-# 						else {
-# 							s.push(board[j][moves[i]-1]);
-# 						}
-# 					}
-# 					// 해당 작업 끝난 후에는 인형을 빼냈으므로 0으로 만든다.(인형이 없다는 표시)
-# 					board[j][moves[i]-1] = 0;
-# 					break;
-# 				}
-# 			}
-# 		}
-# 		return answer;
-# 	}
-# }
+```java
+import java.util.Stack;
+
+class Solution {
+	public static int solution(int[][] board, int[] moves) {
+		int answer = 0;
+		Stack<Integer> s = new Stack<Integer>();
+		for(int i=0; i<moves.length; i++) {
+			for(int j=0; j<board.length; j++) {
+				/* 
+				 * 해당 칸에 인형이 존재하는경우
+				 * ↓ 아래로 내려가므로 행의 값이 계속 바껴야함 (0,0), (1,0), (2,0) ...
+				 * moves배열에 있는 요소를 board[][] 배열의 '열' 값에 넣어서 비교
+				 * 배열의 인덱스는 0부터 시작하므로 -1
+				 */ 
+				if(board[j][moves[i]-1] != 0) {
+					
+					// 스택이 비어있는경우 -> 해당 인형 넣기
+					if(s.isEmpty())
+						s.push(board[j][moves[i]-1]);
+					
+					// 스택이 비어있지 않는경우 -> 인형이 동일한지 아닌지 비교
+					else {
+						// 인형이 동일하면 제거 후 사라진 인형개수 +2
+						if(s.peek() == board[j][moves[i]-1]) {
+							s.pop();
+							answer += 2;
+						}
+						// 인형이 동일하지 않으면 스택에 인형 넣기
+						else {
+							s.push(board[j][moves[i]-1]);
+						}
+					}
+					// 해당 작업 끝난 후에는 인형을 빼냈으므로 0으로 만든다.(인형이 없다는 표시)
+					board[j][moves[i]-1] = 0;
+					break;
+				}
+			}
+		}
+		return answer;
+	}
+}
 ```
