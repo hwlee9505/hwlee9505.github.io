@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 완주하지 못한 선수 level1 x
+title: 완주하지 못한 선수 level1
 parent: Algorithm
 nav_order: 5
 ---
