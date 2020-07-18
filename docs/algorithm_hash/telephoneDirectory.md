@@ -1,13 +1,18 @@
 ---
 layout: default
 title: 전화번호 목록 level2
-parent: Algorithm
-nav_order: 20
+parent: Algorithm 해시
+nav_order: 1
 ---
 
 # 전화번호 목록 (해시)
 {: .no_toc }
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ---
 
 ## 문제 설명
@@ -51,59 +56,59 @@ nav_order: 20
 첫 번째 전화번호, “12”가 두 번째 전화번호 “123”의 접두사입니다. 따라서 답은 false입니다.  
 
 ## 해결 코드
-```yaml
-# import java.util.HashMap;
-# import java.util.Iterator;
-# import java.util.Map;
-# import java.util.Set;
-# 
-# public class Main {
-# 
-#     /*
-#         해시문제라 해시는 써야겠고...
-#         제대로된 코드는 아닌 거 같다...
-# 
-#         contains를 쓰면 안된다.
-#         접두사를 찾는 것 이기에 contains를 쓰면 안된다.
-#         "123", "23"을 생각해보면 된다.
-# 
-#         startsWith를 사용하자!!
-#      */
-# 
-#     public static void main(String[] args) {
-#         System.out.println(Main.solution(new String[]{"119", "97674223", "1195524421"}));
-#     }
-# 
-#     public static boolean solution(String[] phone_book) {
-#         boolean answer = true;
-# 
-#         Map<String, String> map = new HashMap<>();
-# 
-#         // phone_book의 데이터를 key로 넣고 value를 또 phone_book의 데이터로 default
-#         for (String s : phone_book) {
-#             map.put(s, s);
-#         }
-# 
-#         Set set = map.entrySet();
-#         Iterator it = set.iterator();
-# 
-#         while (it.hasNext()) {
-# 
-#             Map.Entry e = (Map.Entry) it.next();
-# 
-#             for (String s : phone_book) {
-# 
-#                 if (s.equals(e.getValue())) {
-#                     continue;
-#                 }
-# 
-#                 if (s.startsWith((String) e.getValue())) {
-#                     return false;
-# 
-#                 }
-#             }
-#         }
-#         return answer;
-#     }
-# }
+```java
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class Main {
+
+    /*
+        해시문제라 해시는 써야겠고...
+        제대로된 코드는 아닌 거 같다...
+
+        contains를 쓰면 안된다.
+        접두사를 찾는 것 이기에 contains를 쓰면 안된다.
+        "123", "23"을 생각해보면 된다.
+
+        startsWith를 사용하자!!
+     */
+
+    public static void main(String[] args) {
+        System.out.println(Main.solution(new String[]{"119", "97674223", "1195524421"}));
+    }
+
+    public static boolean solution(String[] phone_book) {
+        boolean answer = true;
+
+        Map<String, String> map = new HashMap<>();
+
+        // phone_book의 데이터를 key로 넣고 value를 또 phone_book의 데이터로 default
+        for (String s : phone_book) {
+            map.put(s, s);
+        }
+
+        Set set = map.entrySet();
+        Iterator it = set.iterator();
+
+        while (it.hasNext()) {
+
+            Map.Entry e = (Map.Entry) it.next();
+
+            for (String s : phone_book) {
+
+                if (s.equals(e.getValue())) {
+                    continue;
+                }
+
+                if (s.startsWith((String) e.getValue())) {
+                    return false;
+
+                }
+            }
+        }
+        return answer;
+    }
+}
 ```
