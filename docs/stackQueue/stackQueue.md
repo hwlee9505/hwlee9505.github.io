@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Algorithm 스택/큐
-nav_order: 1
+nav_order: 2
 has_children: true
 permalink: /docs/stackQueue
 ---
