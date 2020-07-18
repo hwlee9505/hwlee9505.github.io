@@ -7,7 +7,7 @@ permalink: /docs/algorithm_heap
 ---
 
 
-# 해시
+# 힙
 
 힙 알고리즘 문제 해결 전략  
 
