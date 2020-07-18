@@ -2,7 +2,7 @@
 layout: default
 title: CodeUp 3102 
 parent: Algorithm 스택/큐
-nav_order: 7
+nav_order: 1
 ---
 
 # 기본 자료구조 문제
