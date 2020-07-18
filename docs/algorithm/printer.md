@@ -47,38 +47,86 @@ nav_order: 19
 
 6개의 문서(A, B, C, D, E, F)가 인쇄 대기목록에 있고 중요도가 1 1 9 1 1 1 이므로 C D E F A B 순으로 인쇄합니다.  
 
-## 해결 코드
-```yaml
-# import java.util.*;
-# 
-# class Solution {
-#     public int solution(int[] priorities, int location) {
-#         int answer = 0;
-#         int l = location;
-# 
-#         Queue<Integer> que = new LinkedList<Integer>();
-#         for(int i : priorities){
-#             que.add(i);
-#         }
-# 
-#         Arrays.sort(priorities);
-#         int size = priorities.length-1;
-# 
-#         while(!que.isEmpty()){
-#             Integer i = que.poll();
-#             if(i == priorities[size - answer]){
-#                 answer++;
-#                 l--;
-#                 if(l <0)
-#                     break;
-#             }else{
-#                 que.add(i);
-#                 l--;
-#                 if(l<0)
-#                     l=que.size()-1;
-#             }
-#         }
-#         return answer;
-#     }
-# }
+## 해결 코드1
+```markdown
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Solution {
+    public int solution(int[] priorities, int location) {
+        int answer = 0;
+
+        Queue<Integer> queue = new LinkedList();
+        Integer[] tempArr = new Integer[priorities.length];
+
+        int index = 0;
+        for (int i : priorities) {
+            queue.offer(i);
+            tempArr[index++] = i;
+        }
+
+        Arrays.sort(tempArr, Collections.reverseOrder());
+
+        index = 0;
+        while (!queue.isEmpty()) {
+
+            Integer i = queue.poll();
+
+            if (i != tempArr[answer]) {
+                queue.offer(i);
+                 location--;
+
+                if(location < 0){
+                    location = queue.size()-1;
+                }
+
+            } else {
+                answer++;
+                location--;
+
+                if(location < 0){
+                    break;
+                }
+            }
+        }
+        return answer;
+    }
+}
+```
+## 해결 코드2
+```markdown
+import java.util.*;
+
+class Solution {
+    public int solution(int[] priorities, int location) {
+        int answer = 0;
+        int l = location;
+
+        Queue<Integer> que = new LinkedList<Integer>();
+        for(int i : priorities){
+            que.add(i);
+        }
+
+        Arrays.sort(priorities);
+        int size = priorities.length-1;
+
+        while(!que.isEmpty()){
+            Integer i = que.poll();
+            if(i == priorities[size - answer]){
+                answer++;
+                l--;
+                if(l <0)
+                    break;
+            }else{
+                que.add(i);
+                l--;
+                if(l<0)
+                    l=que.size()-1;
+            }
+        }
+        return answer;
+    }
+}
 ```
