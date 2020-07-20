@@ -35,11 +35,11 @@ permalink: /docs/algorithm_heap
 
 ### 힙 시간 복잡도
 
-| 종류  | 시간복잡도   |
-|:-----|:----------|
-| 탐색  | O(1)      |
-| 추가  | O(log n)  |
-| 삭제  | O(log n   |  
+| 종류    | 시간복잡도      |
+|:-------|:-------------|
+| `탐색`  | `O(1)`       |
+| `추가`  | `O(log n)`   |
+| `삭제`  | `O(log n)`   |  
 
 
 [관련 링크](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Data%20Structure/Heap.md#자료구조-힙heap){: .btn .fs-5 .mb-4 .mb-md-0 }
