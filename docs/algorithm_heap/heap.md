@@ -33,6 +33,6 @@ permalink: /docs/algorithm_heap
 
 ###Personal Recommendation
 
-* Heapify 구현하기
+* Heapify 구현하기  
 
 [관련 링크](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Data%20Structure/Heap.md#자료구조-힙heap){: .btn .fs-5 .mb-4 .mb-md-0 }
