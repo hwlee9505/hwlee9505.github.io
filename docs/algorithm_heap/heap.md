@@ -11,6 +11,13 @@ permalink: /docs/algorithm_heap
 
 힙은 특정한 규칙을 가지는 트리로, 힙을 이용해서 우선순위 큐를 구현할 수 있습니다.
 
+### 시간 복잡도
+
+| 종류    | 시간복잡도      |
+|:-------|:-------------|
+| `탐색`  | `O(1)`       |
+| `추가`  | `O(log n)`   |
+| `삭제`  | `O(log n)`   |  
 ---
 
 ## Binary Heap
@@ -33,13 +40,6 @@ permalink: /docs/algorithm_heap
 
 * Heapify 구현하기  
 
-### 힙 시간 복잡도
-
-| 종류    | 시간복잡도      |
-|:-------|:-------------|
-| `탐색`  | `O(1)`       |
-| `추가`  | `O(log n)`   |
-| `삭제`  | `O(log n)`   |  
 
 
 [관련 링크](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Data%20Structure/Heap.md#자료구조-힙heap){: .btn .fs-5 .mb-4 .mb-md-0 }
