@@ -13,7 +13,7 @@ permalink: /docs/algorithm_stackQueue
 
 LIFO, FIFO, push & pop! 스택과 큐를 이용해서 문제를 풀어보세요.
 
-### 힙 시간 복잡도
+### 시간 복잡도
 
 | 종류    | 시간복잡도      |
 |:-------|:-------------|
