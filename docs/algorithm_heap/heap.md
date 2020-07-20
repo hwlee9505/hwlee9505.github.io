@@ -31,4 +31,8 @@ permalink: /docs/algorithm_heap
 여기서 heap 은 맨 마지막 노드를 루트 노드로 대체시킨 후, 다시 `heapify` 과정을 거쳐 heap 구조를 유지한다.  
 이런 경우에는 결국 `O(log n)`의 시간복잡도로 최대값 또는 최소값에 접근할 수 있게 된다.  
 
+###Personal Recommendation
+
+* Heapify 구현하기
+
 [관련 링크](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Data%20Structure/Heap.md#자료구조-힙heap){: .btn .fs-5 .mb-4 .mb-md-0 }
