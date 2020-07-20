@@ -132,7 +132,7 @@ permalink: /docs/algorithm_hash
         * 체이닝의 적재율은 0.9 이하가 바람직하다.
         * 예) m=13인 경우, 55, 13, 42, 70, 43, 44, 3, 94, 47, 74, 39, 86, 76, 40을 삽입  
     
-![](/assets/images/algorithm/hash/chainning.png)  
+![](/assets/images/algorithm/hash/chaining.png)  
 
 
     * ㄴ. 개방 주소 방법(open addressing)
