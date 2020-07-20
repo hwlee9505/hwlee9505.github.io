@@ -156,3 +156,9 @@ permalink: /docs/algorithm_hash
             * 적재율 0.5 이하인 경우 체이닝보다 개방주소 방법이 낫다.
         * 해시 테이블 역시 시스템 심볼 테이블에 광범위하게 사용
             * Java : java.util.HashMap, java.util.IdentityHashMap
+            
+[관련 링크1](https://github.com/jobhope/TechnicalNote/blob/master/data_structure/Hashing.md){: .btn .fs-5 .mb-4 .mb-md-0 }
+[관련 링크2](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#hash-table){: .btn .fs-5 .mb-4 .mb-md-0 }
+[관련 링크3](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Data%20Structure/Hash.md){: .btn .fs-5 .mb-4 .mb-md-0 }  
+
+[관련 영상](https://www.youtube.com/watch?v=Vi0hauJemxA&t=155s){: .btn .fs-5 .mb-4 .mb-md-0 }
