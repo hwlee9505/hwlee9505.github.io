@@ -17,7 +17,8 @@ permalink: /docs/algorithm_heap
 |:-------|:-------------|
 | `탐색`  | `O(1)`       |
 | `추가`  | `O(log n)`   |
-| `삭제`  | `O(log n)`   |  
+| `삭제`  | `O(log n)`   |
+
 ---
 
 ## Binary Heap
