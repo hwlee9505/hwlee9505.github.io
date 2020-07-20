@@ -55,6 +55,9 @@ permalink: /docs/algorithm_hash
 
 하지만 일반적으로 해시에 대한 이야기할 때는 충돌을 최소화하도록 잘 구현된 경우를 가정하는데 이 경우에 탐색 시간은 `O(1)`이다.
 
+![](/assets/images/algorithm/hash/hash.jpeg)  
+
+
 * 해싱
     * 해싱 : 키를 사용하여 데이터가 저장된 테이블의 인덱스를 알아내는 기법
     * 키로 인덱스된 테이블, 즉 해시 테이블(hash table)에 아이템을 저장하는 기법
@@ -136,4 +139,3 @@ permalink: /docs/algorithm_hash
         * 적재율 0.5 이하인 경우 체이닝보다 개방주소 방법이 낫다.
     * 해시 테이블 역시 시스템 심볼 테이블에 광범위하게 사용
         * Java : java.util.HashMap, java.util.IdentityHashMap
-![](/assets/images/algorithm/hash/hash.jpeg)  
