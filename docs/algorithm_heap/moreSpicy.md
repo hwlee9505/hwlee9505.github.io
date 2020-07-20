@@ -74,7 +74,7 @@ public class Main {
         int answer = 0;
         while(!pq.isEmpty()){                   
 
-            if(pq.size() == 1) break;   //  만약 우선순위 큐 내의 요소가 1개만 존재한다면 더 이상 새로운 스코빌 지수를 만들 수 없으므로 
+            if(pq.size() == 1) break;   //  ✨✨만약 우선순위 큐 내의 요소가 1개만 존재한다면 더 이상 새로운 스코빌 지수를 만들 수 없으므로 
                                         // 문제의 설명 대로 -1을 반환한다.
             if(pq.peek() >= K) break;
 
