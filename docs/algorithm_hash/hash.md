@@ -90,9 +90,9 @@ permalink: /docs/algorithm_hash
 			    - 비트자리수가 큰 경우는 합 (addtion) 혹은 배타적 논리합 (exclusive-or) 사용
             * 문자열 : 가변길이이며, 문자의 순서가 중요
 
-			![](/assets/images/algorithm/hash/polynomialHashcode.png)  
+![](/assets/images/algorithm/hash/polynomialHashcode.png)  
 			
-		    ![](/assets/images/algorithm/hash/hashCode.png)  
+![](/assets/images/algorithm/hash/hashCode.png)  
 		    
 
     * 사용자 정의 타입(user-defined types)
@@ -132,7 +132,7 @@ permalink: /docs/algorithm_hash
         * 체이닝의 적재율은 0.9 이하가 바람직하다.
         * 예) m=13인 경우, 55, 13, 42, 70, 43, 44, 3, 94, 47, 74, 39, 86, 76, 40을 삽입  
     
-        ![](/assets/images/algorithm/hash/chainning.png)  
+![](/assets/images/algorithm/hash/chainning.png)  
 
 
     * ㄴ. 개방 주소 방법(open addressing)
@@ -144,7 +144,7 @@ permalink: /docs/algorithm_hash
         * 예) m = 13 인 경우, 25,13,16,15,7,28,31,20,1,26을 삽입, 단 d(x)=7-(x%7)  
         
 
-        ![](/assets/images/algorithm/hash/openAddressing.png)  
+![](/assets/images/algorithm/hash/openAddressing.png)  
 ￼
 
             * 더블 해싱의 성능이 가장 뛰어나다.
