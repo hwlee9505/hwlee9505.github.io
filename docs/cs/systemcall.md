@@ -29,14 +29,14 @@ nav_order: 10
 
 ## 커널에서 수정해야 할 주요 파일목록
 
-1. `(linux)/arch/x86/entry/syscalls/syscall_64.tbl` (64비트 머신)
-- 시스템 콜 tbl에 push와 pop의 고유번호를 지정해주자
-2. `(linux)/include/linux/syscalls.h`
-- push와 pop의 함수원형(=함수선언부)을 선언해주자
-3. `(linux)/my_stack_syscall.c` 
-- push와 pop을 구현해보자
-4. `(linux)/Makefile` 
-- 커널 컴파일 시 구현한 push와 pop이 컴파일이 되도록 Makefile을 수정해주자
+1️⃣ `(linux)/arch/x86/entry/syscalls/syscall_64.tbl` (64비트 머신)  
+- 시스템 콜 tbl에 push와 pop의 고유번호를 지정해주자  
+2️⃣ `(linux)/include/linux/syscalls.h`  
+- push와 pop의 함수원형(=함수선언부)을 선언해주자  
+3️⃣ `(linux)/my_stack_syscall.c`  
+- push와 pop을 구현해보자  
+4️⃣ `(linux)/Makefile`  
+- 커널 컴파일 시 구현한 push와 pop이 컴파일이 되도록 Makefile을 수정해주자  
 
 ```markdown
 ✨(linux)는 커널의 소스코드가 저장된 루트 폴더입니다.  
