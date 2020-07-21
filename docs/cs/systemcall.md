@@ -72,7 +72,7 @@ syscalls라는 디렉토리에 `시스템 콜 함수들의 이름에 대한 심�
 
 (linux)/include/linux로 이동합니다.  
 
-linux 디렉토리에 시스템 콜 함수들의 전체적인 기능을 간략한 형태로 정의한 파일 이 있는데 그것이 바로 syscalls.h 파일 입니다.  
+linux 디렉토리에 `시스템 콜 함수들의 전체적인 기능을 간략한 형태로 정의한 파일`이 있는데 그것이 바로 `syscalls.h`파일 입니다.  
 
 이제 syscalls.h 가장 마지막 부분에 함수 원형을 등록 해주겠습니다.  
 asmlinkage  void  sys_hwlee_push(int);  
@@ -94,8 +94,8 @@ asmkinkage를 함수 앞에 선언하면, assembyly code에서도 C함수 호출
 
 (linux)/kernel로 이동합니다.
 
-kernel라는 디렉토리는 시스템콜이 실제로 할 일을 구현 되어 있는 곳입니다.  
-여기에 my_stack_syscall.c 파일을 생성후 push함수와 pop함수를 구현해 보도록 하겠습니다. (syscalls.h에 추가해줬던 함수원형을 생각해보면서)
+kernel라는 디렉토리는 `시스템콜이 실제로 할 일을 구현`되어 있는 곳입니다.  
+여기에 `my_stack_syscall.c`파일을 생성후 push함수와 pop함수를 구현해 보도록 하겠습니다. (syscalls.h에 추가해줬던 함수원형을 생각해보면서)
 
 ```markdown
 SYSCALL_DEFINEx : “파라미터의 개수가 x개” 인 시스템콜 구현을 위한 매크로를 이용하도록 합니다. (반환형은 신경 안쓰셔도 됩니다.)  
@@ -147,3 +147,91 @@ SYSCALL_DEFINE0(hwlee_pop){                 // 파라미터 개수가 0개인 �
 ```
 
 ---
+
+## 4. Makefile
+
+![](/assets/images/cs/systemcall/syscall4.png)  
+
+linux)/kernel로 이동합니다.  
+
+kernel 디렉토리에 `커널 컴파일 시 구현한 함수가 컴파일 되도록 해주기 위한 파일`이 있는데 그것이 바로 `Makefile`파일 입니다.  
+
+이제 MakeFile에 obj-y 부분에 구현해주었던 my_stack_syscall에 .o를 붙여 추가해주도록 합니다.  
+my_stack_syscall.o  
+
+![](/assets/images/cs/systemcall/makefile.png)  
+
+---
+
+## 커널 컴파일 및 재시동
+
+위 4가지를 모두 완료하셨다면, (linux)에서 다음 두가지 명령어를 실행해 주세요.  
+
+`sudo make -j 4`  
+`sudo make install`  
+
+컴파일을 다 하셨으면 꼭 재시동을 해주세요.  
+
+`sudo reboot`  
+
+---
+
+## 사용자 응용 프로그램 작성
+
+이제 시스템 콜 push와 pop이 정상적으로 추가 되었는지 확인하기 위해 응용프로그램을 작성 해보도록 하겠습니다.  
+
+![](/assets/images/cs/systemcall/syscall5.png)  
+
+```markdown
+응용프로그램은 간단히 Desktop 디렉토리에 만들었습니다.  
+```  
+
+
+```markdown
+#include<linux/unistd.h>
+
+#define my_stack_push 335     // my_stack_push == 335
+#define my_stack_pop 336      // my_stack_pop == 336
+
+void push(int data){          // push함수로 데이터값을 인자로 받아 출력하고 커널의 시스템콜을 호출!
+    printf("Push: %d\n",data);
+    syscall(my_stack_push,data);
+}
+
+void pop(){                   // pop함수로 인자없이 스택 데이터값을 출력하고 커널의 시스템콜을 호출!
+    printf("Pop: %d\n", syscall(my_stack_pop));
+}
+
+int main(void){
+    
+    push(1);                  // 1 push
+    push(2);                  // 2 push
+    push(3);                  // 3 push
+    push(4);                  // 4 push
+    push(5);                  // 5 push
+
+    pop();                    // pop!
+    pop();                    // pop!
+    pop();                    // pop!
+    pop();                    // pop!
+    pop();                    // pop!
+
+    return 0;                 // 종료 
+} 
+```  
+
+![](/assets/images/cs/systemcall/syscall6.png)  
+
+gcc call_my_stack.c –o call_my_stack를 입력해주세요.  
+
+```markdown
+– "call_my_stack.c를 컴파일해서 call_my_stack라는 이름의 실행 파일을 만들어라"란 뜻입니다.  
+```  
+
+![](/assets/images/cs/systemcall/syscall7.png)  
+
+./call_my_stack로 실행하니 응용프로그램의 원했던 printf문이 나왔습니다.  
+이제 dmesg를 통해서 my_stack_syscall.c의 printk로 원하던 출력이 나왔는지를 확인해봅니다.  
+
+![](/assets/images/cs/systemcall/syscall8.png)  
+
