@@ -45,7 +45,7 @@ nav_order: 10
 
 ---
 
-## 1. syscall_64.tbl
+## syscall_64.tbl
 
 ![](/assets/images/cs/systemcall/syscall1.png)  
 
@@ -66,6 +66,27 @@ syscalls라는 디렉토리에 `시스템 콜 함수들의 이름에 대한 심�
 
 ---
 
+## 2. syscalls.h  
+
+![](/assets/images/cs/systemcall/syscall2.png)  
+
+(linux)/include/linux로 이동합니다.  
+
+linux 디렉토리에 시스템 콜 함수들의 전체적인 기능을 간략한 형태로 정의한 파일 이 있는데 그것이 바로 syscalls.h 파일 입니다.  
+
+이제 syscalls.h 가장 마지막 부분에 함수 원형을 등록 해주겠습니다.  
+asmlinkage  void  sys_hwlee_push(int);  
+asmlinkage  int  sys_hwlee_pop(void);  
+
+```markdown
+asmlinkage를 사용하는 이유  
+시스템 콜 호출은 assembly 코드로 작성되어있는 int 80인터럽트 핸들러에서 호출됩니다.  
+asmkinkage를 함수 앞에 선언하면, assembyly code에서도 C함수 호출이 가능해집니다.  
+```
+
+![](/assets/images/cs/systemcall/syscalls_h.png)  
+
+---
 
 
 
