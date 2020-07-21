@@ -39,7 +39,7 @@ nav_order: 10
 - 커널 컴파일 시 구현한 push와 pop이 컴파일이 되도록 Makefile을 수정해주자
 
 ```markdown
-(linux)는 커널의 소스코드가 저장된 루트 폴더입니다.  
+✨(linux)는 커널의 소스코드가 저장된 루트 폴더입니다.  
 저의 경우는 /usr/src/linux-5.2.10 입니다.
 ```
 
@@ -49,13 +49,13 @@ nav_order: 10
 
 ![](/assets/images/cs/systemcall/syscall1.png)  
 
-(linux)/arch/x86/entry/syscalls로 이동합니다.  
+`(linux)/arch/x86/entry/syscalls`로 이동합니다.  
 
 syscalls라는 디렉토리에 `시스템 콜 함수들의 이름에 대한 심볼정보를 모아놓은 파일`이 있는데 그것이 바로 `syscall_64.tbl`파일 입니다.  
 이제 syscall_64.tbl에 `시스템 콜 push와 pop의 number(고유번호)를 저장` 하기위해 코드를 추가 할 것입니다.  
 
-335  common  hwlee_push  _x64_sys_hwlee_push  
-336  common  hwlee_pop   _x64_sys_hwlee_pop  
+`335  common  hwlee_push  _x64_sys_hwlee_push`  
+`336  common  hwlee_pop   _x64_sys_hwlee_pop`  
 
 ![](/assets/images/cs/systemcall/syscall_64tbl.png)  
 
@@ -69,13 +69,13 @@ syscalls라는 디렉토리에 `시스템 콜 함수들의 이름에 대한 심�
 
 ![](/assets/images/cs/systemcall/syscall2.png)  
 
-(linux)/include/linux로 이동합니다.  
+`(linux)/include/linux`로 이동합니다.  
 
 linux 디렉토리에 `시스템 콜 함수들의 전체적인 기능을 간략한 형태로 정의한 파일`이 있는데 그것이 바로 `syscalls.h`파일 입니다.  
 
 이제 syscalls.h 가장 마지막 부분에 함수 원형을 등록 해주겠습니다.  
-asmlinkage  void  sys_hwlee_push(int);  
-asmlinkage  int  sys_hwlee_pop(void);  
+`asmlinkage  void  sys_hwlee_push(int);`  
+`asmlinkage  int  sys_hwlee_pop(void);`  
 
 ```markdown
  ✨asmlinkage를 사용하는 이유  
@@ -91,7 +91,7 @@ asmkinkage를 함수 앞에 선언하면, assembyly code에서도 C함수 호출
 
 ![](/assets/images/cs/systemcall/syscall3.png)  
 
-(linux)/kernel로 이동합니다.
+`(linux)/kernel`로 이동합니다.
 
 kernel라는 디렉토리는 `시스템콜이 실제로 할 일을 구현`되어 있는 곳입니다.  
 여기에 `my_stack_syscall.c`파일을 생성후 push함수와 pop함수를 구현해 보도록 하겠습니다. (syscalls.h에 추가해줬던 함수원형을 생각해보면서)
@@ -151,12 +151,12 @@ SYSCALL_DEFINE0(hwlee_pop){                 // 파라미터 개수가 0개인 �
 
 ![](/assets/images/cs/systemcall/syscall4.png)  
 
-linux)/kernel로 이동합니다.  
+`(linux)/kernel`로 이동합니다.  
 
 kernel 디렉토리에 `커널 컴파일 시 구현한 함수가 컴파일 되도록 해주기 위한 파일`이 있는데 그것이 바로 `Makefile`파일 입니다.  
 
-이제 MakeFile에 obj-y 부분에 구현해주었던 my_stack_syscall에 .o를 붙여 추가해주도록 합니다.  
-my_stack_syscall.o  
+이제 MakeFile에 obj-y 부분에 구현해주었던 my_stack_syscall에 `.o`를 붙여 추가해주도록 합니다.  
+`my_stack_syscall.o`  
 
 ![](/assets/images/cs/systemcall/makefile.png)  
 
@@ -221,7 +221,7 @@ int main(void){
 
 ![](/assets/images/cs/systemcall/syscall6.png)  
 
-gcc call_my_stack.c –o call_my_stack를 입력해주세요.  
+`gcc call_my_stack.c –o call_my_stack`를 입력해주세요.  
 
 ```markdown
 – "call_my_stack.c를 컴파일해서 call_my_stack라는 이름의 실행 파일을 만들어라"란 뜻입니다.  
