@@ -21,16 +21,27 @@ nav_order: 10
 
 
 
-## 자료구조에서 set과 list의 차이는?
+## 시작하기에 앞서
+
+리눅스 kernel을 수정하여 Stack 1) push와 2) pop System Call을 추가하고, 응용프로그램의 호출에 의해 동작을 확인해보는 시간을 갖도록 하겠습니다.  
+
+---
+
+## 커널에서 수정해야 할 주요 파일목록
+
+1. (linux)/arch/x86/entry/syscalls/syscall_64.tbl (64비트 머신)
+- 시스템 콜 tbl에 push와 pop의 고유번호를 지정해주자
+2. (linux)/include/linux/syscalls.h
+- push와 pop의 함수원형(=함수선언부)을 선언해주자
+3. (linux)/my_stack_syscall.c 
+- push와 pop을 구현해보자
+4. (linux)/Makefile 
+- 커널 컴파일 시 구현한 push와 pop이 컴파일이 되도록 Makefile을 수정해주자
 
 ```scss
-list : 순서가 중요 -> 중복 허용  
-set  : 순서는 중요하지 않은데 -> 중복 허용 안됨
+(linux)는 커널의 소스코드가 저장된 루트 폴더입니다.  
+저의 경우는 /usr/src/linux-5.2.10 입니다.
 ```
-
-set : 순서 없음, 중복 데이터 불가(집합 성격)  
-list : 순서 있음(index 사용 가능), 중복 허용  
-
 
 ## context-switching이란?
 
