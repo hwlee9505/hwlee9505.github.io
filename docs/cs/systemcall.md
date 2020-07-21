@@ -45,14 +45,13 @@ nav_order: 10
 
 ---
 
-## 1. syscall_64.tbl
+## 1️⃣ syscall_64.tbl
 
 ![](/assets/images/cs/systemcall/syscall1.png)  
 
 (linux)/arch/x86/entry/syscalls로 이동합니다.  
 
 syscalls라는 디렉토리에 `시스템 콜 함수들의 이름에 대한 심볼정보를 모아놓은 파일`이 있는데 그것이 바로 `syscall_64.tbl`파일 입니다.  
-
 이제 syscall_64.tbl에 `시스템 콜 push와 pop의 number(고유번호)를 저장` 하기위해 코드를 추가 할 것입니다.  
 
 335  common  hwlee_push  _x64_sys_hwlee_push  
@@ -66,7 +65,7 @@ syscalls라는 디렉토리에 `시스템 콜 함수들의 이름에 대한 심�
 
 ---
 
-## 2. syscalls.h  
+## 2️⃣ syscalls.h  
 
 ![](/assets/images/cs/systemcall/syscall2.png)  
 
@@ -88,7 +87,7 @@ asmkinkage를 함수 앞에 선언하면, assembyly code에서도 C함수 호출
 
 ---
 
-## 3. my_stack_syscall.c  
+## 3️⃣ my_stack_syscall.c  
 
 ![](/assets/images/cs/systemcall/syscall3.png)  
 
@@ -98,7 +97,7 @@ kernel라는 디렉토리는 `시스템콜이 실제로 할 일을 구현`되어
 여기에 `my_stack_syscall.c`파일을 생성후 push함수와 pop함수를 구현해 보도록 하겠습니다. (syscalls.h에 추가해줬던 함수원형을 생각해보면서)
 
 ```markdown
-SYSCALL_DEFINEx : “파라미터의 개수가 x개” 인 시스템콜 구현을 위한 매크로를 이용하도록 합니다. (반환형은 신경 안쓰셔도 됩니다.)  
+✨SYSCALL_DEFINEx : “파라미터의 개수가 x개” 인 시스템콜 구현을 위한 매크로를 이용하도록 합니다. (반환형은 신경 안쓰셔도 됩니다.)  
 파라매터 0개 - SYSCALL_DEFINE0(syscall이름)  
 파라매터 1개 - SYSCALL_DEFINE1(syscall이름, 자료형1, 변수1)  
 파라매터 2개 - SYSCALL_DEFINE2(syscall이름, 자료형1, 변수1, 자료형2, 변수2)  
@@ -148,7 +147,7 @@ SYSCALL_DEFINE0(hwlee_pop){                 // 파라미터 개수가 0개인 �
 
 ---
 
-## 4. Makefile
+## 4️⃣ Makefile
 
 ![](/assets/images/cs/systemcall/syscall4.png)  
 
