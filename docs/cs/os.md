@@ -90,6 +90,10 @@ nav_order: 11
         * 네트워킹(통신)
         * 명령 해석기  
         
+---
+
+## 멀티 프로그래밍 vs 멀티 테스킹
+
 * 운영체제의 유형
     * Batch Processing System (일괄 처리 시스템)
     * Multi Programming System (다중 프로그래밍 시스템)
@@ -97,10 +101,6 @@ nav_order: 11
     * Time Sharing System (시분할 시스템)
     * Real Time System (실시간 처리 시스템)
     * Disturbed Processing System (분산 처리 시스템)
-
----
-
-## 멀티 프로그래밍 vs 멀티 테스킹
 
 `멀티 프로그래밍`이란, 특정 프로세스 A에 대해서 프로세서가 작업을 처리할 때 `낭비되는 시간동안 다른 프로세서를 처리하도록 하는 것`입니다.  
 
