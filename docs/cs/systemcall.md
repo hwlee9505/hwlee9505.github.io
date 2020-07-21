@@ -1,6 +1,6 @@
 ---
 layout: default
-title: linux에서 System Call 추가하기
+title: linux-5.2.10에서 스택 push, pop System Call 추가하기
 parent: CS 지식
 nav_order: 10
 ---
