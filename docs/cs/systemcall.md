@@ -45,7 +45,7 @@ nav_order: 10
 
 ---
 
-## syscall_64.tbl
+## 1. syscall_64.tbl
 
 ![](/assets/images/cs/systemcall/syscall1.png)  
 
@@ -88,5 +88,62 @@ asmkinkage를 함수 앞에 선언하면, assembyly code에서도 C함수 호출
 
 ---
 
+## 3. my_stack_syscall.c  
+
+![](/assets/images/cs/systemcall/syscall3.png)  
+
+(linux)/kernel로 이동합니다.
+
+kernel라는 디렉토리는 시스템콜이 실제로 할 일을 구현 되어 있는 곳입니다.  
+여기에 my_stack_syscall.c 파일을 생성후 push함수와 pop함수를 구현해 보도록 하겠습니다. (syscalls.h에 추가해줬던 함수원형을 생각해보면서)
+
+```markdown
+SYSCALL_DEFINEx : “파라미터의 개수가 x개” 인 시스템콜 구현을 위한 매크로를 이용하도록 합니다. (반환형은 신경 안쓰셔도 됩니다.)  
+파라매터 0개 - SYSCALL_DEFINE0(syscall이름)  
+파라매터 1개 - SYSCALL_DEFINE1(syscall이름, 자료형1, 변수1)  
+파라매터 2개 - SYSCALL_DEFINE2(syscall이름, 자료형1, 변수1, 자료형2, 변수2)  
+파라매터 n개 - SYSCALL_DEFINEn(syscall이름, 자료형1, 변수1,...자료형n, 변수n)  
+```
+
+```markdown
+#include<linux/syscalls.h>
+#include<linux/kernel.h>
+#include<linux/linkage.h>
+
+#define LENGTH 5                            // 원하는 만큼 길이를 상수로 표현 (저는 최대 크기를 5로 잡았습니다.)
+int stack[LENGTH];                          // int 배열 형태의 stack을 전역 변수로 선언  
+int top = -1;                               // int 형의 stack 최고점 인덱스를 전역 변수로 선언 
 
 
+
+SYSCALL_DEFINE1(hwlee_push,int,data){       // 파라미터 개수가 1개인 시스템콜 구현을 위한 매크로
+    if( top < LENGTH ){                     // 스택 최고점이 5를 넘지 않는 경우 
+        stack[++top] = data;                // 배열값이 늘어난 후, 데이터값이 들어온다.
+    }
+    int i;
+    printk("[System call] hwlee_push(): Push %d\n",data);
+    printk("Stack Top--------------\n");
+    for(i = top; i>=0; i--){                // 현재 스택 최고점에서 바닥까지
+        printk("%d\n", stack[i]);           // 스택의 데이터값을 출력한다.
+    }
+    printk("Stack Bottom-----------\n");
+}
+
+SYSCALL_DEFINE0(hwlee_pop){                 // 파라미터 개수가 0개인 시스템콜 구현을 위한 매크로
+    
+    if(top != -1){                          // 스택에 비어 있지 않는다면 
+    int tmp = stack[top--];                 // 스택에 데이터값을 tmp에 옮긴 후, 스택하나 줄인다.
+    int i;
+    printk("[System call] hwlee_pop(): Pop %d\n",tmp);
+    printk("Stack Top--------------\n");
+    for(i = top; i>=0; i--){                // 현재 스택의 최상의 마지막부터 바닥까지 
+        printk("%d\n", stack[i]);           // 스택의 데이터값을 출력한다. 
+    }
+    printk("Stack Bottom-----------\n");
+
+    return tmp;                             // pop의 프로토타입(함수원형)은 asmlinkage int sys_hwlee_pop(void)이므로 
+    }                                       // pop된 데이터값을 반환해주도록 합니다.
+}
+```
+
+---
