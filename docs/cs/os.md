@@ -97,12 +97,12 @@ nav_order: 11
 * 운영체제의 유형
     * Batch Processing System (일괄 처리 시스템)
     * Multi Programming System (다중 프로그래밍 시스템)
-    * Multi Tasking System (다중 처리 시스템)
+    * Multi Processing System (다중 처리 시스템)
     * Time Sharing System (시분할 시스템)
     * Real Time System (실시간 처리 시스템)
     * Disturbed Processing System (분산 처리 시스템)
 
-`멀티 프로그래밍`이란, 특정 프로세스 A에 대해서 프로세서가 작업을 처리할 때 `낭비되는 시간동안 다른 프로세서를 처리하도록 하는 것`입니다.  
+`멀티 프로그래밍`이란, 여러 프로그램을 메모리에 적재한 후 하나의 프로그램이 프로세서를 사용하다가 입출력 동작 등을 하여 프로세서를 사용하지 않는 `유휴시간(idle time)`동안 다른 프로그램이 프로세서를 사용하도록 하는 시스템이다.  
 
 ```markdown
 예를 들어 A라는 프로세스를 처리중에 있을 때 입출력 이벤트가 발생했는데 프로세서가 입출력 이벤트에 대한 응답을 위해 무작정 대기하고 있다면 프로세서의 자원을 낭비하는 결과를 초래합니다.  
