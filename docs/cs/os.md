@@ -89,7 +89,14 @@ nav_order: 11
         * 시스템 보호(사용자 권한 부여)
         * 네트워킹(통신)
         * 명령 해석기  
-
+        
+* 운영체제의 유형
+    * Batch Processing System (일괄 처리 시스템)
+    * Multi Programming System (다중 프로그래밍 시스템)
+    * Multi Tasking System (다중 처리 시스템)
+    * Time Sharing System (시분할 시스템)
+    * Real Time System (실시간 처리 시스템)
+    * Disturbed Processing System (분산 처리 시스템)
 
 ---
 
