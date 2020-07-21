@@ -79,7 +79,7 @@ asmlinkage  void  sys_hwlee_push(int);
 asmlinkage  int  sys_hwlee_pop(void);  
 
 ```markdown
-asmlinkage를 사용하는 이유  
+ ✨asmlinkage를 사용하는 이유  
 시스템 콜 호출은 assembly 코드로 작성되어있는 int 80인터럽트 핸들러에서 호출됩니다.  
 asmkinkage를 함수 앞에 선언하면, assembyly code에서도 C함수 호출이 가능해집니다.  
 ```
