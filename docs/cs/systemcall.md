@@ -224,13 +224,13 @@ int main(void){
 `gcc call_my_stack.c –o call_my_stack`를 입력해주세요.  
 
 ```markdown
-– "call_my_stack.c를 컴파일해서 call_my_stack라는 이름의 실행 파일을 만들어라"란 뜻입니다.  
+"call_my_stack.c를 컴파일해서 call_my_stack라는 이름의 실행 파일을 만들어라"란 뜻입니다.  
 ```  
 
 ![](/assets/images/cs/systemcall/syscall7.png)  
 
-./call_my_stack로 실행하니 응용프로그램의 원했던 printf문이 나왔습니다.  
-이제 dmesg를 통해서 my_stack_syscall.c의 printk로 원하던 출력이 나왔는지를 확인해봅니다.  
+`./call_my_stack`로 실행하니 응용프로그램의 원했던 printf문이 나왔습니다.  
+이제 `dmesg`를 통해서 my_stack_syscall.c의 printk로 원하던 출력이 나왔는지를 확인해봅니다.  
 
 ![](/assets/images/cs/systemcall/syscall8.png)  
 
