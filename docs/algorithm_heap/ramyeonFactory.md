@@ -69,9 +69,8 @@ import java.util.Queue;
 
 /*
     결론:
-    날이 지나면서 정렬된 dates배열의 원소와 날이 같아지면 priorityQueue에 삽입시킨다.
-
-    그러고 나서 재고가 다 떨어졌을때(stock == 0) priorityd의 최상위 supplies를 더한다.
+    1. 날이 지나면서 정렬된 dates배열의 원소와 날이 같아지면 priorityQueue에 삽입시킨다.
+    2. 그러고 나서 재고가 다 떨어졌을때(stock == 0) priorityQueue의 최상위 supplies를 더한다.
  */
 
 public class Main {
@@ -100,6 +99,7 @@ public class Main {
 
             stock--;
         }
+
 
         return answer;
     }
