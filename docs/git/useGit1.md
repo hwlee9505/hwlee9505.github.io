@@ -6,13 +6,6 @@ nav_order: 0
 ---
 
 # CLI를 통해 깃 허브와 PC 동기화 시키기
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ---
 
@@ -42,7 +35,8 @@ test-git
 
 ![](/assets/images/git/useGit1/usingGit4.png)  
 
-add 시켜주고
+PC에 직접 만들어 놓은 test.md  
+add 시켜주고  
 
 ---
 
