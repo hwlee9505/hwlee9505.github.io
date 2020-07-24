@@ -26,9 +26,13 @@ create Repository
 
 pwd, ls, cd  
 
-mkdir test-git  
-       ㄴ Git-Tutorial   
-mk         ㄴ test.md  
+mkdir mk  
+
+```scss
+test-git  
+ㄴ Git-Tutorial   
+    ㄴ test.md  
+```
 
 ![](/assets/images/git/useGit1/usingGit2.png)  
 
