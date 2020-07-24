@@ -1,0 +1,23 @@
+---
+layout: default
+title: Git 설치 및 사용법 익히기
+parent: Git
+nav_order: 0
+---
+
+# Terminal에서 깃 허브와 PC 동기화 시키기
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+![](/assets/images/git/useGit1/usingGit1.png)  
+
+![](/assets/images/git/useGit1/usingGit2.png)  
+
+
