@@ -24,12 +24,6 @@ create Repository
 
 ---
 
-![](/assets/images/git/useGit1/usingGit2.png)  
-
-
-
----
-
 pwd, ls, cd  
 
 mkdir mk  
@@ -37,9 +31,27 @@ mkdir mk
 ```scss
 test-git  
   ㄴ Git-Tutorial   
-      ㄴ test.md (직접 만듬.)
+      ㄴ test.md (직접 만듬)
 ```
+
+![](/assets/images/git/useGit1/usingGit2.png)  
 
 ![](/assets/images/git/useGit1/usingGit3.png)  
 
+---
 
+![](/assets/images/git/useGit1/usingGit4.png)  
+
+add 시켜주고
+
+---
+
+![](/assets/images/git/useGit1/usingGit5.png)  
+
+message와 commit
+
+---
+
+![](/assets/images/git/useGit1/usingGit6.png)  
+
+마지막으로 push
