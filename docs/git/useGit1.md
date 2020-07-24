@@ -54,3 +54,9 @@ message와 commit
 
 ![](/assets/images/git/useGit1/usingGit7.png)  
 ![](/assets/images/git/useGit1/usingGit8.png)  
+
+---
+
+git pull == git fetch + git merge  
+
+[관련 링크](https://ndb796.tistory.com/187){: .btn .fs-5 .mb-4 .mb-md-0 }
