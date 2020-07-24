@@ -37,5 +37,9 @@ mkdir mk
 ```scss
 test-git  
   ㄴ Git-Tutorial   
-      ㄴ test.md  
+      ㄴ test.md (직접 만듬.)
 ```
+
+![](/assets/images/git/useGit1/usingGit3.png)  
+
+
