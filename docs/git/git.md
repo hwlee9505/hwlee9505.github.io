@@ -7,6 +7,6 @@ permalink: /docs/git
 ---
 
 
-# git
+# Git 관리
 
 라피신 가기전에 깃 다뤄보기
