@@ -5,7 +5,7 @@ parent: Git
 nav_order: 0
 ---
 
-# Terminal에서 깃 허브와 PC 동기화 시키기
+# CLI를 통해 깃 허브와 PC 동기화 시키기
 {: .no_toc }
 
 ## Table of contents
@@ -17,6 +17,18 @@ nav_order: 0
 ---
 
 ![](/assets/images/git/useGit1/usingGit1.png)  
+
+로그인 후  
+new Repository  
+create Repository  
+
+---
+
+pwd, ls, cd  
+
+mkdir test-git  
+       ㄴ Git-Tutorial   
+mk         ㄴ test.md  
 
 ![](/assets/images/git/useGit1/usingGit2.png)  
 
