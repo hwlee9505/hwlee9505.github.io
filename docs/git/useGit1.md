@@ -48,4 +48,9 @@ message와 commit
 
 ![](/assets/images/git/useGit1/usingGit6.png)  
 
-마지막으로 push
+마지막으로 push  
+
+---
+
+![](/assets/images/git/useGit1/usingGit7.png)  
+![](/assets/images/git/useGit1/usingGit8.png)  
