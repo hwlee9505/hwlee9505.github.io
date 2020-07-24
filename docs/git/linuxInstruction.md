@@ -16,28 +16,23 @@ nav_order: 0
 
 ---
 
-# 1. pwd
-{: .label .label-red }
+## pwd
 
 ---
 
-# 2. ls
-{: .label .label-red }
+## ls
 
 ---
 
-# 3. cd
-{: .label .label-red }
+## cd
 
 ---
 
-# 4. mkdir
-{: .label .label-red }
+## mkdir
 
 ---
 
-# 5. rmdir
-{: .label .label-red }
+## rmdir
 
 
 ```
