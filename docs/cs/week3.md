@@ -199,6 +199,6 @@ port : 운영체제 통신의 종단점으로, 네트워크 서비스나 특정 
 외부 단편화 : 여유 공간이 여러 조각으로 나뉘는 현상.  
 조각이 너무 작게 나있어 응용프로그램의 성능을 뒷바쳐주지 못함  
 
-[관련 링크1](https://ko.wikipedia.org/wiki/%EB%8B%A8%ED%8E%B8%ED%99%94){: .btn .fs-5 .mb-4 .mb-md-0 }
+[관련 링크](https://ko.wikipedia.org/wiki/%EB%8B%A8%ED%8E%B8%ED%99%94){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
