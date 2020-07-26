@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Operating System
+title: Network
 parent: CS 지식
 nav_order: 12
 ---
