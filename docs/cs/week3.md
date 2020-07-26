@@ -281,7 +281,7 @@ AQ. IP주소와 port번호를 어떻게 적는가? 123을 앞에 두고
 
 ---
 
-### (추가질문)InterProcess Communication의 종류 아는 것을 말해보시오. 
+### (꼬리질문) InterProcess Communication의 종류 아는 것을 말해보시오. 
 
 ---
 
