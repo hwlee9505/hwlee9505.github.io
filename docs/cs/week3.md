@@ -116,6 +116,36 @@ End-to-end 전송은 단순히 한 컴퓨터에서 다음 컴퓨터로의 전달
 
 ---
 
-
 # 병준님 -> 성용이
 {: .label .label-yellow }
+
+## 페이지 교체 정책에 대해 생각나는 것 모두 말해주세요.
+
+1. OPT(optimal)  
+이론적으로만 존재하는 최적의 페이지 교체 알고리즘으로, 가장 먼 미래에 사용될 페이지를 교체하는 정책.  
+성능을 비교하기 위한 척도로 사용  
+
+2. NRU(Not Recently Used)  
+최근에 사용된 페이지를 유지하는 것을 선호하는 알고리즘.  
+referenced, modified를 운영체제가 계산하여 4개의 클래스로 나눈 뒤 활용  
+3. FIFO(First in First out)  
+
+먼저 들어온 페이지를 먼저 내보내는 정책.  
+가장 적은 오버헤드를 가짐.  
+
+4. second-chance  
+FIFO와 비슷하나, page out 하기 전에 referenced bit가 set 되어있으면 큐에 다시 집어넣음.  
+모든 page의 referenced bit가 set 되어 있으면 가장 먼저 page out 요청되었던 페이지가 page out 당함  
+
+5. LRU(Least Recently Used)  
+최근에 가장 적게 사용된 페이지를 교체.  
+NRU와 비슷.  
+차이점은 LRU는 페이지에 대한 참조를 긴 시간 유지하지만, NRU는 clock 타임만 유지  
+
+6. Random  
+
+7. NFU(Not Frequently Used)  
+가장 적게 사용된 페이지를 교체.  
+각각에 대한 페이지에 counter를 사용하여 참조된 횟수를 계산 후, 가장 적은 횟수의 페이지를 page out하는 방법  
+
+[관련 링크](https://en.wikipedia.org/wiki/Page_replacement_algorithm){: .btn .fs-5 .mb-4 .mb-md-0 }  
