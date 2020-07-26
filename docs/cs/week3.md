@@ -121,30 +121,31 @@ End-to-end 전송은 단순히 한 컴퓨터에서 다음 컴퓨터로의 전달
 
 ## 페이지 교체 정책에 대해 생각나는 것 모두 말해주세요.
 
-1. OPT(optimal)  
+1. `OPT(optimal)`  
 이론적으로만 존재하는 최적의 페이지 교체 알고리즘으로, 가장 먼 미래에 사용될 페이지를 교체하는 정책.  
 성능을 비교하기 위한 척도로 사용  
 
-2. NRU(Not Recently Used)  
+2. `NRU(Not Recently Used)`  
 최근에 사용된 페이지를 유지하는 것을 선호하는 알고리즘.  
 referenced, modified를 운영체제가 계산하여 4개의 클래스로 나눈 뒤 활용  
-3. FIFO(First in First out)  
+
+3. `FIFO(First in First out)`  
 
 먼저 들어온 페이지를 먼저 내보내는 정책.  
 가장 적은 오버헤드를 가짐.  
 
-4. second-chance  
+4. `second-chance`  
 FIFO와 비슷하나, page out 하기 전에 referenced bit가 set 되어있으면 큐에 다시 집어넣음.  
 모든 page의 referenced bit가 set 되어 있으면 가장 먼저 page out 요청되었던 페이지가 page out 당함  
 
-5. LRU(Least Recently Used)  
+5. `LRU(Least Recently Used)`  
 최근에 가장 적게 사용된 페이지를 교체.  
 NRU와 비슷.  
 차이점은 LRU는 페이지에 대한 참조를 긴 시간 유지하지만, NRU는 clock 타임만 유지  
 
-6. Random  
+6. `Random`  
 
-7. NFU(Not Frequently Used)  
+7. `NFU(Not Frequently Used)`  
 가장 적게 사용된 페이지를 교체.  
 각각에 대한 페이지에 counter를 사용하여 참조된 횟수를 계산 후, 가장 적은 횟수의 페이지를 page out하는 방법  
 
@@ -153,28 +154,36 @@ NRU와 비슷.
 ---
 
 ## TCP와 UDP의 차이를 말해주세요.
-신뢰성 : TCP는 메시지 수신을 확인하지만, UDP에서는 알 수 없다.  
-순서 정렬 : TCP는 메시지가 보내진 순서를 보장하기 위해 재조립하지만, UDP는 메시지 도착 순서를 알 수 없다.  
-부하 : UDP가 TCP보다 더 빠르다.  
+
+```markdown
+UDP 같은 경우에는 비 연결형이랑  
+TCP는 연결형이라고 볼 수 있는데 3wayhs 라고해서  
+만들때 연결을 확정하고나서 정보를 송수신 할 수 있게 만들어 사용  
+UDP는 멀티미디어 전송에 사용.
+```
+
+`신뢰성` : TCP는 메시지 수신을 확인하지만, UDP에서는 알 수 없다.  
+`순서 정렬` : TCP는 메시지가 보내진 순서를 보장하기 위해 재조립하지만, UDP는 메시지 도착 순서를 알 수 없다.  
+`부하` : UDP가 TCP보다 더 빠르다.  
 
 ---
 
 ## 프로그램 메모리의 구조와 각각의 역할을 설명해주세요.
 
-1. 코드영역(code segment, text segment)  
+1. `코드영역(code segment, text segment)`  
 실행할 프로그램의 코드가 저장된 영역.  
 read-only / excutable  
 
-2. 데이터 영역  
+2. `데이터 영역`  
 전역변수, 정적 변수가 할당되는 공간.  
 프로그램 종료시 소멸  
 
-3. 힙 영역  
+3. `힙 영역`  
 동적으로 할당/해제되는 영역  
 낮은주소 -> 높은 주소로 할당  
 런타임시 크기가 결정됨  
 
-4. 스택 영역  
+4. `스택 영역`  
 지역변수와 매개변수  
 높은주소 -> 낮은 주소로 할당  
 컴파일시 크기가 결정됨  
@@ -185,8 +194,8 @@ read-only / excutable
 ---
 
 ## IP 주소와 Port에 대해 설명해주세요.
-ip address :  인터넷규약주소는 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.  
-port : 운영체제 통신의 종단점으로, 네트워크 서비스나 특정 프로세스를 식별하는 논리 단위  
+`ip address` :  인터넷규약주소는 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.  
+`port` : 운영체제 통신의 종단점으로, 네트워크 서비스나 특정 프로세스를 식별하는 논리 단위  
 
 [관련 링크1](https://ko.wikipedia.org/wiki/IP_%EC%A3%BC%EC%86%8C){: .btn .fs-5 .mb-4 .mb-md-0 }
 [관련 링크2](https://ko.wikipedia.org/wiki/%ED%8F%AC%ED%8A%B8_(%EC%BB%B4%ED%93%A8%ED%84%B0_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9)){: .btn .fs-5 .mb-4 .mb-md-0 }  
@@ -194,9 +203,9 @@ port : 운영체제 통신의 종단점으로, 네트워크 서비스나 특정 
 ---
 
 ## 메모리 단편화의 종류에 대해 설명해주세요.
-내부 단편화 : 프로세스의 크기가 페이지보다 작은 경우  
+`내부 단편화` : 프로세스의 크기가 페이지보다 작은 경우  
 
-외부 단편화 : 여유 공간이 여러 조각으로 나뉘는 현상.  
+`외부 단편화` : 여유 공간이 여러 조각으로 나뉘는 현상.  
 조각이 너무 작게 나있어 응용프로그램의 성능을 뒷바쳐주지 못함  
 
 [관련 링크](https://ko.wikipedia.org/wiki/%EB%8B%A8%ED%8E%B8%ED%99%94){: .btn .fs-5 .mb-4 .mb-md-0 }
