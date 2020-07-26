@@ -195,6 +195,7 @@ read-only / excutable
 
 ## IP 주소와 Port에 대해 설명해주세요.
 `ip address` :  인터넷규약주소는 컴퓨터 네트워크에서 장치들이 서로를 인식하고 통신을 하기 위해서 사용하는 특수한 번호이다.  
+
 `port` : 운영체제 통신의 종단점으로, 네트워크 서비스나 특정 프로세스를 식별하는 논리 단위  
 
 [관련 링크1](https://ko.wikipedia.org/wiki/IP_%EC%A3%BC%EC%86%8C){: .btn .fs-5 .mb-4 .mb-md-0 }
