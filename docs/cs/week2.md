@@ -14,8 +14,11 @@ nav_order: 2
 1. TOC
 {:toc}
 ---
+
 ![](/assets/images/cs/week2.jpeg)
+
 ---
+
 # 지현님 -> 나
 {: .label .label-red }
 
