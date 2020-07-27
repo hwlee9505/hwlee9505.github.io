@@ -5,7 +5,7 @@ parent: CS 지식
 nav_order: 12
 ---
 
-# Operating System
+# Network
 {: .no_toc }
 
 ## Table of contents
