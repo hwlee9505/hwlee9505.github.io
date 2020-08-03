@@ -2,7 +2,7 @@
 layout: default
 title: C programming snail
 parent: Algorithm
-nav_order: 17
+nav_order: 19
 ---
 
 # 윤성우의 열혈 C 프로그래밍 (달팽이 그리기)
