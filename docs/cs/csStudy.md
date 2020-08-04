@@ -17,6 +17,7 @@ permalink: /docs/cs
 [관련 링크 2](https://github.com/JaeYeopHan/Interview_Question_for_Beginner){: .btn .fs-5 .mb-4 .mb-md-0 }
 [관련 링크 3](https://github.com/gyoogle/tech-interview-for-developer){: .btn .fs-5 .mb-4 .mb-md-0 }
 [관련 링크 4](https://sisparang.tistory.com/27?category=317631){: .btn .fs-5 .mb-4 .mb-md-0 }
+[관련 링크 5](https://okky.kr/article/752495){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ## cs 조사하면서 참고하면 좋은 강의들
 [관련 링크](https://chobokkiri.tistory.com/m/75){: .btn .fs-5 .mb-4 .mb-md-0 }
