@@ -8,6 +8,8 @@ nav_order: 0
 # 리눅스 명령어 
 {: .no_toc }
 
+[관련 링크](https://github.com/gyoogle/tech-interview-for-developer/tree/master/Linux){: .btn .fs-5 .mb-4 .mb-md-0 }  
+
 ## Table of contents
 {: .no_toc .text-delta }
 
