@@ -97,26 +97,26 @@ public class Main {
         int totalSV = Integer.parseInt(st.nextToken());
         int deputySV = Integer.parseInt(st.nextToken());
 
-        int answer = 0;
-        long total = siteNum;
+        long answer = 0;
         for (int i = 0; i < siteNum; i++) {
 
             // 총감독관은 오직 1명은 있어야하기 때문에 일단 빼준다.
             candidate[i] -= totalSV;
+            answer++;
 
             // 부감독관으로 나머지 채우기
             if (candidate[i] > 0) {
 
-                total += candidate[i] / deputySV;
+                answer += candidate[i] / deputySV;
 
                 if (candidate[i] % deputySV != 0) {
-                    total++;
+                    answer++;
                 }
 
             }
 
         }
-        System.out.println(total);
+        System.out.println(answer);
     }
 }
 ```
