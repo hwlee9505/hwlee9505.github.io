@@ -97,7 +97,7 @@ public class Main {
         int totalSV = Integer.parseInt(st.nextToken());
         int deputySV = Integer.parseInt(st.nextToken());
 
-        long answer = 0;
+        long answer = 0;                // 왜 기본자료형이 long이여야 하는지는 의문...
         for (int i = 0; i < siteNum; i++) {
 
             // 총감독관은 오직 1명은 있어야하기 때문에 일단 빼준다.
