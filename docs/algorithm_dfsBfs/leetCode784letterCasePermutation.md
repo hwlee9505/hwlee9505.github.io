@@ -1,11 +1,11 @@
 ---
 layout: default
-title: LeetCode Letter Case Permutation
+title: LeetCode Letter Case Permutation x
 parent: Algorithm 깊이/너비 우선 탐색
 nav_order: 0
 ---
 
-# LeetCode Letter Case Permutation (BFS & Backtracking)
+# LeetCode Letter Case Permutation (BFS & Backtracking) X
 
 [관련 링크](https://www.youtube.com/watch?v=wxQmnEKNXAM&t=352s){: .btn .fs-5 .mb-4 .mb-md-0 }  
 
