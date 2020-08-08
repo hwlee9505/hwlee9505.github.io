@@ -44,8 +44,7 @@ Output: ["12345"]
 
 ## 해결전략
 
-![](/assets/images/algorithm/letterCasePermutation.jpeg)
-
+![](/assets/images/algorithm/letterCasePermutation.jpeg)  
 
 ## 해결 코드
 ```markdown
