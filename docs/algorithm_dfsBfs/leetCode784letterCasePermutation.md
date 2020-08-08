@@ -7,7 +7,7 @@ nav_order: 0
 
 # LeetCode Letter Case Permutation (BFS & Backtracking) X
 
-[관련 링크](https://www.youtube.com/watch?v=wxQmnEKNXAM&t=352s){: .btn .fs-5 .mb-4 .mb-md-0 }  
+[관련 링크](https://www.youtube.com/watch?v=wxQmnEKNXAM){: .btn .fs-5 .mb-4 .mb-md-0 }  
 
 
 {: .no_toc }
