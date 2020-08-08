@@ -39,8 +39,13 @@ Output: ["12345"]
 
 ## 제약
 
-* `S` will be a string with length between `1` and `12`.
-* `S` will consist only of letters or digits.
+* `S` will be a string with length between `1` and `12`.  
+* `S` will consist only of letters or digits.  
+
+## 해결전략
+
+![](/assets/images/algorithm/letterCasePermutation.jpeg)
+
 
 ## 해결 코드
 ```markdown
