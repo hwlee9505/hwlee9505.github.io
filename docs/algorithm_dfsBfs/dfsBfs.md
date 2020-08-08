@@ -18,6 +18,7 @@ permalink: /docs/algorithm_dfsBfs
 ## 백트래킹 (DFS을 기반으로)
 
 [관련 링크](https://www.slideshare.net/JaehoSeok/0521-8051381){: .btn .fs-5 .mb-4 .mb-md-0 }  
+
 [관련 문제](http://idea-sketch.tistory.com/29){: .btn .fs-5 .mb-4 .mb-md-0 }  
 
 조건에 맞는 모든 경우를 찾고싶다.  
