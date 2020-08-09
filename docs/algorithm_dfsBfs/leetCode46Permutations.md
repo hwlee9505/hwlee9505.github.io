@@ -7,7 +7,7 @@ nav_order: 1
 
 # Permutations (DFS & Backtracking) X
 
-[관련 링크](https://www.youtube.com/watch?v=36du-PpTazc){: .btn .fs-5 .mb-4 .mb-md-0 }  
+[관련 링크](https://www.youtube.com/watch?v=36du-PpTazc){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 
 {: .no_toc }
