@@ -5,7 +5,7 @@ parent: Algorithm 깊이/너비 우선 탐색
 nav_order: 0
 ---
 
-# LeetCode Letter Case Permutation (BFS & Backtracking) X
+# LeetCode Letter Case Permutation (DFS & Backtracking) X
 
 [관련 링크](https://www.youtube.com/watch?v=wxQmnEKNXAM){: .btn .fs-5 .mb-4 .mb-md-0 }  
 
