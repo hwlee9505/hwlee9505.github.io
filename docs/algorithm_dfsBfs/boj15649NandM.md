@@ -45,8 +45,6 @@ nav_order: 2
 3 1  
 ```
 
----
-
 ## 예제 출력1
 
 ```markdown
@@ -62,8 +60,6 @@ nav_order: 2
 ```markdown
 4 2  
 ```
-
----
 
 ## 예제 출력2
 
@@ -89,8 +85,6 @@ nav_order: 2
 ```markdown
 4 4  
 ```
-
----
 
 ## 예제 출력3
 ```markdown
