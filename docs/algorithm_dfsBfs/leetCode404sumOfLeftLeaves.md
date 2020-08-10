@@ -79,7 +79,7 @@ class Solution {
     }
 }
 
-public class Test {
+public class Main {
 
     public static void main(String[] args) {
         TreeNode node4 = new TreeNode(7,null,null);
