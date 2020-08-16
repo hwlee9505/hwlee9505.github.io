@@ -71,4 +71,25 @@ rm을 사용할 경우
 
 ## git push
 
+ ---
+
+## | 파이프
+
+---
+
+## grep
+
+---
+
+## sort
+
+---
+
+## log
+
+---
+
+## >, <, >> (Redirection, append)
+
+
 
