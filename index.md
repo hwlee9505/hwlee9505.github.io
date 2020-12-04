@@ -12,13 +12,11 @@ permalink: /
 Welcome!
 {: .fs-6 .fw-300 }
 
-[Get started now](#자기소개){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/hwlee9505){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get started now](#자기소개){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/hyunwlee-dev){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
 ## 자기소개
-
-![](/assets/images/siru.png)
 
 ### Dependencies
 
