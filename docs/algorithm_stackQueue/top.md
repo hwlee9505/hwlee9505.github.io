@@ -76,6 +76,45 @@ nav_order: 6
 
 ![](/assets/images/algorithm/top.jpeg)
 
+## 해결 코드
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+import java.util.StringTokenizer;
+
+public class Main
+{
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        Stack<Integer> s = new Stack<>();
+        Stack<Integer> index = new Stack<>();
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        arr[0] = 0;
+        int high;
+        for ( int i = 0 ; i < n; i ++)
+        {
+            high = Integer.parseInt(st.nextToken());
+            while (!s.empty() && s.peek() < high)
+            {
+                s.pop();
+                index.pop();
+            }
+            if (!s.empty())
+                arr[i] = index.peek();
+            s.push(high);
+            index.push(i + 1);
+        }
+
+        for (int i = 0 ; i < n; i ++)
+            System.out.println(arr[i]);
+    }
+}
+```
 
 ## 해결 코드1
 ```java
